@@ -21,7 +21,7 @@ function ServiceCard({ service }) {
           </p>
           <p className="font-light text-gray text-sm">
             <span className="font-bold text-base text-primary">
-              ${service.charge}${" "}
+              ${service.charge}
             </span>{" "}
             per hour
           </p>

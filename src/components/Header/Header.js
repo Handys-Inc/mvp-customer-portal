@@ -25,10 +25,12 @@ function Header() {
   ];
   return (
     <div>
-      <div className="flex flex-row justify-between items-center px-5 pt-5 pb-2">
+      <div className="flex flex-row justify-between items-center px-5 pt-5 pb-3">
         <NavLink to="/">
           <img className="w-20 md:w-28" src={logo} alt="Logo" />
         </NavLink>
+
+        {/* Search */}
         <Search />
         {/* Profile  */}
         <div className="flex items-center gap-5">
@@ -46,6 +48,7 @@ function Header() {
               <Transition
                 as={Fragment}
                 enter="transition ease-out duration-100"
+                z
                 enterFrom="transform opacity-0 scale-95"
                 enterTo="transform opacity-100 scale-100"
                 leave="transition ease-in duration-75"

@@ -13,8 +13,10 @@ module.exports = {
       colors: {
         primary: " #CE1449",
         secondary: "#EFE4D9",
+        lightSecondary: "#FFECF1",
         mute: "#DDDDDD",
         gray: "#626262",
+        faintGray: "#99989821",
         lightGray: "#FAFAFA",
       },
       backgroundImage: {

@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/*General Routes */}
-        {/* <Route path="/" exact element={<Home />} /> */}
+        <Route path="/" exact element={<Home />} />
 
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<Notfound />} />

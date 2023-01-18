@@ -128,9 +128,22 @@ input[type="number"] {
 /* Selector */
 
 .selector-container {
-  @apply bg-lightSecondary text-sm flex items-center hover:bg-primary hover:text-white cursor-pointer font-normal rounded-full px-6 py-3;
+  @apply bg-lightSecondary text-sm flex items-center  cursor-pointer font-normal rounded-full px-6 py-3;
 }
 
 .selector-icon {
-  @apply inline-block mr-2;
+  @apply inline-block;
+}
+
+/* account */
+.account-card {
+  @apply rounded-2xl shadow-xl p-5 py-10;
+}
+
+.account-card > h3 {
+  @apply font-semibold text-xl mb-2;
+}
+
+.account-card > p {
+  @apply font-light text-gray;
 }

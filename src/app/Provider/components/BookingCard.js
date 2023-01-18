@@ -1,5 +1,7 @@
 import React from "react";
-import { AiOutlineLike } from "react-icons/ai";
+
+import Like from "../../../assets/icons/svg/Like";
+
 import { BsTags } from "react-icons/bs";
 
 function BookingCard() {
@@ -11,7 +13,7 @@ function BookingCard() {
             <span className="font-bold text-black text-2xl">$65 </span> per hour
           </p>
           <div className="flex items-center text-gray text-sm">
-            <AiOutlineLike size={24} /> +24
+            <Like size={18} fill="#1d1d1d" /> <span className="ml-1">+24</span>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { AiOutlineLike } from "react-icons/ai";
+import Like from "../../../assets/icons/svg/Like";
 
 import wall from "../../../assets/images/wall.png";
 import { NavLink } from "react-router-dom";
@@ -29,7 +29,8 @@ function ServiceCard({ service }) {
             </p>
           </div>
           <div className="flex items-center text-gray text-sm">
-            <AiOutlineLike /> +{service.likes}
+            <Like size={18} fill="#1d1d1d" />{" "}
+            <span className="ml-1">+{service.likes}</span>
           </div>
         </div>
       </div>

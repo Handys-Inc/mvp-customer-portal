@@ -1,32 +1,33 @@
 import React from "react";
 
-import { TbPaint } from "react-icons/tb";
-import { AiOutlineTool } from "react-icons/ai";
-import { MdOutlineCleaningServices } from "react-icons/md";
-import { IoBulbOutline } from "react-icons/io5";
-import { VscTools } from "react-icons/vsc";
+// custom svgs
+import Broom from "../../../assets/icons/svg/Broom";
+import Bulb from "../../../assets/icons/svg/Bulb";
+import Wrench from "../../../assets/icons/svg/Wrench";
+import Worker from "../../../assets/icons/svg/Worker";
+import Roller from "../../../assets/icons/svg/Roller";
 
 function Selector() {
   const selectors = [
     {
       name: "Painter",
-      icon: <TbPaint size={20} className="selector-icon" />,
+      icon: <Roller size={18} className="selector-icon" />,
     },
     {
       name: "Plumber",
-      icon: <AiOutlineTool size={20} className="selector-icon" />,
+      icon: <Wrench size={18} className="selector-icon" />,
     },
     {
       name: "Electrician",
-      icon: <IoBulbOutline size={20} className="selector-icon" />,
+      icon: <Bulb size={18} className="selector-icon" />,
     },
     {
       name: "Cleaner",
-      icon: <MdOutlineCleaningServices size={20} className="selector-icon" />,
+      icon: <Broom size={18} className="selector-icon" />,
     },
     {
       name: "General handy person",
-      icon: <VscTools size={20} className="selector-icon" />,
+      icon: <Worker size={18} className="selector-icon" />,
     },
   ];
   return (
@@ -36,7 +37,7 @@ function Selector() {
           return (
             <div className="selector-container">
               {selector.icon}
-              {selector.name}
+              <span className="ml-2">{selector.name}</span>
             </div>
           );
         })}

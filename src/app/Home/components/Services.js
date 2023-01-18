@@ -58,7 +58,7 @@ function Services() {
       image: null,
     },
     {
-      id: 1,
+      id: 7,
       name: "John Doe",
       field: "Painter",
       experience: "1-4",
@@ -67,7 +67,7 @@ function Services() {
       image: null,
     },
     {
-      id: 1,
+      id: 8,
       name: "Richard Clarence",
       field: "Electrician",
       experience: "3",
@@ -77,11 +77,14 @@ function Services() {
     },
   ];
   return (
-    <div className="px-5 mb-56">
+    <div className="px-5 mb-32">
       <div className="grid grid-cols-4 gap-10">
         {services.map((service) => {
           return <ServiceCard id={service.id} service={service} />;
         })}
+      </div>
+      <div className="text-center my-10">
+        <button className="btn-primary-outline my-5">Load more</button>
       </div>
     </div>
   );

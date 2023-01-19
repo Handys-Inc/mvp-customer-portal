@@ -5,6 +5,7 @@ import Like from "../../../assets/icons/svg/Like";
 import { BsTags } from "react-icons/bs";
 
 import { Popover } from "@headlessui/react";
+import { NavLink } from "react-router-dom";
 
 function BookingCard() {
   return (
@@ -48,7 +49,10 @@ function BookingCard() {
 
         {/* Book Button */}
         <div className="mt-5">
-          <button className="btn-primary w-full">Book</button>
+          <NavLink to="/checkout">
+            <button className="btn-primary w-full">Book</button>
+          </NavLink>
+
           <p className="text-sm font-light text-gray text-center mt-2">
             You won't be charged until job completion is confirmed
           </p>

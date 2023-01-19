@@ -147,3 +147,11 @@ input[type="number"] {
 .account-card > p {
   @apply font-light text-gray;
 }
+
+.general-card {
+  @apply shadow-xl rounded-2xl p-10;
+}
+
+.h3-header {
+  @apply font-semibold text-2xl;
+}

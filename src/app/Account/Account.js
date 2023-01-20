@@ -5,6 +5,7 @@ import Header from "../../components/Header/Header";
 import badge from "../../assets/icons/badge.svg";
 import shield from "../../assets/icons/shield-2.svg";
 import money from "../../assets/icons/money-bill.svg";
+import dot from "../../assets/icons/dot.svg";
 
 // navlink
 import { NavLink } from "react-router-dom";
@@ -14,15 +15,23 @@ function Account() {
     <div>
       <Header />
 
-      <div className="flex max-w-7xl mx-auto h-[80vh] mt-20 ">
+      <div className="account-content-holder">
         <div>
           <h2 className="font-bold text-4xl"> Account</h2>
-          <p className="text-xl mt-1">
-            Alice Irs,{" "}
-            <span className="font-light text-gray text-lg">
-              aliceirs@handys.ca
-            </span>
-          </p>
+          <div className="flex gap-3  items-center mt-2">
+            <p className="text-xl">
+              Alice Irs,{" "}
+              <span className="font-light text-gray text-lg">
+                aliceirs@handys.ca
+              </span>
+            </p>
+            <img className="mt-1" src={dot} alt="dot" />{" "}
+            <NavLink to="/account/profile">
+              <p className="font-bold text-lg hover:underline text-gray">
+                View profile
+              </p>
+            </NavLink>
+          </div>
 
           {/* Links */}
           <div className="flex justify-between gap-10 mt-10">

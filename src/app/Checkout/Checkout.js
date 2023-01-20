@@ -11,7 +11,7 @@ function Checkout() {
   return (
     <div>
       <Header />
-      <div className="flex justify-between gap-10 m-5">
+      <div className="flex justify-between gap-10 mx-16 my-8">
         <div className="flex-1">
           {/* Header */}
           <div className="flex gap-5 mb-10 items-center">

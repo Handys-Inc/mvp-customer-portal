@@ -12,12 +12,12 @@ import { NavLink } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 
 import Profile from "../../assets/images/profile.png";
+import Notifications from "./components/Notifications";
 
 function Header() {
   // menu links
   const links = [
     { href: "/messages", label: "Messages" },
-    { href: "/notifications", label: "Notifications" },
     { href: "/service-history", label: "Service History" },
     { href: "/account", label: "Account" },
     { href: "/help", label: "Help" },
@@ -37,7 +37,7 @@ function Header() {
           <a href="https://service-handys.netlify.app/">
             <p>Switch to service provider</p>
           </a>
-
+          <Notifications />
           <div>
             <Menu as="div" className="relative inline-block text-left">
               <div>
@@ -66,7 +66,7 @@ function Header() {
                                 active
                                   ? "text-black bg-lightSecondary"
                                   : "text-gray"
-                              } group flex w-full items-center rounded-md px-4 py-3 text-lg font-normal`}
+                              } group flex w-full items-center rounded-full px-4 py-3 text-lg font-normal`}
                             >
                               {/* {active ? <span>Active</span> : <div>Inactive</div>} */}
                               {link.label}
@@ -80,6 +80,7 @@ function Header() {
               </Transition>
             </Menu>
           </div>
+
           <img className="w-10" src={Profile} alt="user" />
         </div>
       </div>

@@ -7,8 +7,24 @@ function CheckInfo() {
   return (
     <div>
       <h3>Your Order</h3>
-      <h5>Dates</h5>
-      <h5>Address</h5>
+      {/* Date */}
+      <div className="my-5 flex justify-between">
+        <div>
+          <h3 className="font-semibold text-xl">Dates</h3>
+          <p className="text-gray text-sm">Apr 1 - 20</p>
+        </div>
+        <p className="underline">Edit</p>
+      </div>
+
+      {/* Address */}
+
+      <div className="my-5 mb-10 flex justify-between">
+        <div>
+          <h3 className="font-semibold text-xl">Address</h3>
+          <p className="text-gray text-sm">Crisp Road,Kamloops, ns, Canada</p>
+        </div>
+        <p className="underline">Edit</p>
+      </div>
       <Border />
 
       <h3 className="h3-header">Pay With</h3>

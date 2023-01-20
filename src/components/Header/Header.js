@@ -31,7 +31,8 @@ function Header() {
         </NavLink>
 
         {/* Search */}
-        <Search />
+        <Search className="" />
+
         {/* Profile  */}
         <div className="flex items-center gap-5">
           <a href="https://service-handys.netlify.app/">

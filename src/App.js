@@ -7,8 +7,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./app/Home/Home";
 import Notfound from "./app/NotFound/Notfound";
 import Provider from "./app/Provider/Provider";
+
+import Checkout from "./app/Checkout/Checkout";
+
+// Accounts
 import Account from "./app/Account/Account";
-import Checkout from './app/Checkout/Checkout'
+import Payments from "./app/Account/components/Payments";
+import Security from "./app/Account/components/Security";
+import PersonalInfo from "./app/Account/components/PersonalInfo";
+import Profile from "./app/Account/components/Profile";
 
 function App() {
   return (
@@ -19,11 +26,14 @@ function App() {
         <Route path="/book/provider" exact element={<Provider />} />
 
         {/* Checkout */}
-          <Route path="/checkout" exact element={<Checkout />} />
+        <Route path="/checkout" exact element={<Checkout />} />
 
         {/* Account */}
         <Route path="/account" exact element={<Account />} />
-
+        <Route path="/account/profile" exact element={<Profile />} />
+        <Route path="/account/personal" exact element={<PersonalInfo />} />
+        <Route path="/account/security" exact element={<Security />} />
+        <Route path="/account/payments" exact element={<Payments />} />
 
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<Notfound />} />

@@ -34,7 +34,7 @@ function Header() {
         <Search className="" />
 
         {/* Profile  */}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-2">
           <a href="https://service-handys.netlify.app/">
             <p>Switch to service provider</p>
           </a>

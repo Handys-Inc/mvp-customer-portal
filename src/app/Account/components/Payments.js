@@ -2,25 +2,21 @@ import React from "react";
 
 import Header from "../../../components/Header/Header";
 
-import { NavLink } from "react-router-dom";
-
-import { IoIosArrowForward } from "react-icons/io";
+import AccountHeader from "./AccountHeader";
+import Border from "../../../components/Border/Border";
 
 function Payments() {
   return (
     <div>
       <Header />
-      <div className="mt-20 mb-5 max-w-5xl mx-auto">
-        <NavLink to="/account">
-          <p className="text-sm underline">Back</p>
-        </NavLink>
-      </div>
+      <AccountHeader title="Payments & Payouts" />
+
       <div className="max-w-5xl mx-auto">
-        <h3 className="text-xl font-semibold">
-          Account <IoIosArrowForward className="inline-block" /> Payments &
-          payouts
-        </h3>
-        <h3 className="text-4xl font-bold">Payments & payouts</h3>
+        <h3 className="text-xl font-bold">Login</h3>
+        <p className="text-lg text-gray font-light">Last updated 2 years ago</p>
+        <Border />
+        <h3 className="text-xl font-bold">Account</h3>
+        <p className="text-lg text-gray font-light">Deactivate your account</p>
       </div>
     </div>
   );

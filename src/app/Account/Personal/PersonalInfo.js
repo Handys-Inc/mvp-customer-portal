@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../../../components/Header/Header";
 
 import Border from "../../../components/Border/Border";
-import AccountHeader from "./AccountHeader";
+import AccountHeader from "../components/AccountHeader";
 
 function PersonalInfo() {
   const data = [

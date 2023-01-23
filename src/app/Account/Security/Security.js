@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 import Header from "../../../components/Header/Header";
 
-import AccountHeader from "./AccountHeader";
+import AccountHeader from "../components/AccountHeader";
 
 import Border from "../../../components/Border/Border";
 
 import Modal from "../../../components/Modal/Modal";
-import UpdatePassword from "./UpdatePassword";
-import DeactivateAccount from "./DeactivateAccount";
+import UpdatePassword from "./components/UpdatePassword";
+import DeactivateAccount from "./components/DeactivateAccount";
 
 function Security() {
   const [passwordModal, setPasswordModal] = useState(false);

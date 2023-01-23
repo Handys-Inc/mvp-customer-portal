@@ -159,3 +159,13 @@ input[type="number"] {
 .account-content-holder {
   @apply flex max-w-7xl mx-auto h-[80vh] mt-20;
 }
+
+/* tabs */
+
+.tab-active {
+  @apply inline-flex mr-4 py-4 text-black border-b-2 border-gray focus:outline-none;
+}
+
+.tab-inactive {
+  @apply inline-flex mr-4 py-4 text-gray border-b-2 border-none;
+}

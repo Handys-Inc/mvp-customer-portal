@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 function AccountHeader({ title }) {
   return (
-    <div className="mt-20 mb-14 max-w-5xl mx-auto">
+    <div className="mt-20 mb-10 max-w-5xl mx-auto">
       <NavLink to="/account">
         <p className="text-sm underline mb-5">Back</p>
       </NavLink>

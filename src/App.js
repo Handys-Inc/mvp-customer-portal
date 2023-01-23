@@ -12,9 +12,9 @@ import Checkout from "./app/Checkout/Checkout";
 
 // Accounts
 import Account from "./app/Account/Account";
-import Payments from "./app/Account/components/Payments";
-import Security from "./app/Account/components/Security";
-import PersonalInfo from "./app/Account/components/PersonalInfo";
+import Payments from "./app/Account/Payments/Payments";
+import Security from "./app/Account/Security/Security";
+import PersonalInfo from "./app/Account/Personal/PersonalInfo";
 import Profile from "./app/Account/components/Profile";
 
 function App() {

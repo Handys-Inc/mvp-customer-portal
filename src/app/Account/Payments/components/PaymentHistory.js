@@ -31,17 +31,17 @@ function PaymentHistory() {
     <div className="text-gray">
       <Border />
       <div className="flex justify-between items-center font-semibold">
-        <p className="flex-1 text-left">Paid for</p>
-        <p className="flex-1">Payment method</p>
-        <p className="flex-1 text-right">Amount</p>
+        <p className="flex-1 w-1/3 text-left">Paid for</p>
+        <p className="flex-1 w-1/3 text-left">Payment method</p>
+        <p className="flex-1 w-1/3 text-right">Amount</p>
       </div>
       <Border />
       {history.map((single) => {
         return (
           <div className="flex flex-row justify-between items-center text-sm my-3">
-            <p className="flex-1 text-left">{single.name}</p>
-            <p className="flex-1">{single.method}</p>
-            <p className="flex-1 text-right"> ${single.amount} CAD</p>
+            <p className="flex-1 w-1/3 text-left">{single.name}</p>
+            <p className="flex-1 w-1/3 text-left">{single.method}</p>
+            <p className="flex-1 w-1/3 text-right"> ${single.amount} CAD</p>
           </div>
         );
       })}

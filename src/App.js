@@ -16,6 +16,7 @@ import Payments from "./app/Account/Payments/Payments";
 import Security from "./app/Account/Security/Security";
 import PersonalInfo from "./app/Account/Personal/PersonalInfo";
 import Profile from "./app/Account/components/Profile";
+import History from "./app/History/History";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
         <Route path="/account/personal" exact element={<PersonalInfo />} />
         <Route path="/account/security" exact element={<Security />} />
         <Route path="/account/payments" exact element={<Payments />} />
+
+        <Route path="/service-history" exact element={<History />} />
 
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<Notfound />} />

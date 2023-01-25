@@ -10,6 +10,11 @@ import two from "../../assets/images/prov-2.png";
 import three from "../../assets/images/prov-3.png";
 
 function Provider() {
+  // scroll to top
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="mb-56">
       <Header />

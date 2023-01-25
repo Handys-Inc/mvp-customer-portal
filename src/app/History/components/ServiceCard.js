@@ -3,9 +3,14 @@ import React, { useState } from "react";
 import Modal from "../../../components/Modal/Modal";
 
 import Details from "./Details";
+import Report from "./Report";
+
+import prov from "../../../assets/images/prov-1.png";
 
 function ServiceCard({ service }) {
   const [detailsModal, setDetailsModal] = useState(false);
+  const [reportModal, setReportModal] = useState(false);
+
   return (
     <div>
       <div
@@ -13,7 +18,13 @@ function ServiceCard({ service }) {
         className="flex gap-5 cursor-pointer"
       >
         {/*  */}
-        <div className="w-20 h-20 bg-gray rounded-xl"></div>
+        <div>
+          <img
+            src={prov}
+            className="w-20 h-20 bg-cover bg-center rounded-xl"
+            alt="provider"
+          />
+        </div>
 
         {/* Service Pro */}
         <div>
@@ -29,7 +40,18 @@ function ServiceCard({ service }) {
         isOpen={detailsModal}
         setIsOpen={setDetailsModal}
       >
-        <Details />
+        <Details
+          setDetailsModal={setDetailsModal}
+          setReportModal={setReportModal}
+        />
+      </Modal>
+
+      {/* Report Modal */}
+      <Modal title="Report" isOpen={reportModal} setIsOpen={setReportModal}>
+        <Report
+          setDetailsModal={setDetailsModal}
+          setReportModal={setReportModal}
+        />
       </Modal>
     </div>
   );

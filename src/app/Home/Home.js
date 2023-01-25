@@ -4,6 +4,11 @@ import Services from "./components/Services";
 import Header from "../../components/Header/Header";
 
 function Home() {
+  // scroll to top
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       {/* Header, search and profile */}

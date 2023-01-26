@@ -10,6 +10,7 @@ import Payouts from "./components/Payouts";
 import Tax from "./components/Tax";
 
 import sack from "../../../assets/icons/sack.svg";
+import Tips from "./components/Tips";
 
 function Payments() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -78,6 +79,9 @@ function Payments() {
               </Tab.Panel>
 
               {/* Tips */}
+              <Tab.Panel>
+                <Tips />
+              </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         </div>

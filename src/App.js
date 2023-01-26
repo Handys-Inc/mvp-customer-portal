@@ -19,6 +19,7 @@ import Profile from "./app/Account/components/Profile";
 import History from "./app/History/History";
 import Payouts from "./app/Payouts/Payouts";
 import Interac from "./app/Payouts/Interac/Interac";
+import Paypal from "./app/Payouts/Paypal/Paypal";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
 
         <Route path="/setup-payouts" exact element={<Payouts />} />
         <Route path="/setup-payouts/interac" exact element={<Interac />} />
+        <Route path="/setup-payouts/paypal" exact element={<Paypal />} />
 
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<Notfound />} />

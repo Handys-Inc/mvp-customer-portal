@@ -177,3 +177,7 @@ input[type="number"] {
 .tab-inactive {
   @apply inline-flex mr-4 py-4 text-gray border-b-2 border-none;
 }
+
+.digit-input {
+  @apply border border-gray w-full rounded-md px-2 py-5 text-center text-2xl;
+}

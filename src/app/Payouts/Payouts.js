@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import PayHeader from "./components/PayHeader";
 
 import paypal from "../../assets/logo/paypal.png";
 import interac from "../../assets/logo/interac.png";
 import Border from "../../components/Border/Border";
 
+// icons
+import { MdArrowForward } from "react-icons/md";
+
+import { NavLink } from "react-router-dom";
+
 function Payouts() {
+  const [method, setMethod] = useState(null);
   return (
     <div>
       <PayHeader />
@@ -24,6 +30,8 @@ function Payouts() {
           <input
             className="form-input mt-2"
             type="text"
+            disabled
+            value="Canada"
             placeholder="Billing country / region"
           />
           <p className="text-gray mt-2 text-xs font-light">
@@ -54,7 +62,11 @@ function Payouts() {
                   </div>
                 </div>
                 <div className="">
-                  <input type="radio" />
+                  <input
+                    checked={method === "paypal"}
+                    onClick={() => setMethod("paypal")}
+                    type="radio"
+                  />
                 </div>
               </div>
               <Border />
@@ -74,16 +86,30 @@ function Payouts() {
                   </div>
                 </div>
                 <div className="">
-                  <input type="radio" />
+                  <input
+                    checked={method === "interac"}
+                    onClick={() => setMethod("interac")}
+                    type="radio"
+                  />
                 </div>
               </div>
             </fieldset>
           </form>
         </div>
-
-        <button className="btn-primary w-full my-5 ">
-          Continue with Interac
-        </button>
+        <div className="flex justify-between my-5">
+          <div></div>
+          <NavLink
+            to={
+              method === "interac"
+                ? "/setup-payouts/interac"
+                : "/setup-payouts/paypal"
+            }
+          >
+            <button disabled={method === null} className="btn-primary">
+              Continue <MdArrowForward className="ml-3 inline" size={24} />
+            </button>
+          </NavLink>
+        </div>
       </div>
     </div>
   );

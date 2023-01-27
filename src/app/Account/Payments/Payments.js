@@ -19,7 +19,7 @@ function Payments() {
       <Header />
       <AccountHeader title="Payments & Payouts" />
 
-      <div className="flex flex-col md:flex-row gap-32 items-start justify-between  max-w-5xl mx-auto mb-20">
+      <div className="flex flex-col md:flex-row gap-32 items-start justify-between  max-w-5xl mx-auto mb-20 min-h-screen">
         <div className="flex-1 min-h-[20rem]">
           <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
             <div class="border-b border-mute">

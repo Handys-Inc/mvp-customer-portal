@@ -145,7 +145,7 @@ input[type="number"] {
 
 /* account */
 .account-card {
-  @apply rounded-2xl shadow-xl p-5 py-10;
+  @apply rounded-2xl shadow-xl p-5 py-10 border border-faintGray;
 }
 
 .account-card > h3 {
@@ -165,7 +165,7 @@ input[type="number"] {
 }
 
 .account-content-holder {
-  @apply flex max-w-7xl mx-auto h-[80vh] mt-20;
+  @apply max-w-6xl  mx-auto min-h-screen mt-20;
 }
 
 /* tabs */
@@ -180,4 +180,8 @@ input[type="number"] {
 
 .digit-input {
   @apply border border-gray w-full rounded-md px-2 py-5 text-center text-2xl;
+}
+
+input[type="radio"] {
+  @apply focus:ring-0 text-primary border-gray;
 }

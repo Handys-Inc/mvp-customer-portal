@@ -18,7 +18,7 @@ function AddCard() {
       {/* Other Details */}
       <div className="text-gray font-light border rounded-xl border-mute my-5">
         <input
-          className="w-full my-3 pl-5 mt-2 focus:outline-none outline-none"
+          className="w-full border-transparent focus:border-transparent focus:ring-0 my-3 pl-5 mt-2 focus:outline-none outline-none"
           placeholder="Card Number"
           type="text"
         />
@@ -26,16 +26,20 @@ function AddCard() {
         <div className="text-mute block">
           <hr className="" />
         </div>
-        <div className="grid text-left grid-cols-2 divide-x divide-mute">
+        <div className="grid items-center text-left grid-cols-2 divide-x divide-mute">
           <div>
             <input
-              className="pl-5 my-3"
+              className="pl-5 my-3 border-transparent focus:border-transparent focus:ring-0"
               type=" text"
               placeholder="Expiry date"
             />
           </div>
           <div>
-            <input className="pl-5 my-3" type="text" placeholder="CVV" />
+            <input
+              className="pl-5 my-3 border-transparent focus:border-transparent focus:ring-0"
+              type="text"
+              placeholder="CVV"
+            />
           </div>
         </div>
       </div>

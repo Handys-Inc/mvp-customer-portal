@@ -15,7 +15,7 @@ function Account() {
     <div>
       <Header />
 
-      <div className="account-content-holder">
+      <div className="account-content-holder mx-auto">
         <div>
           <h2 className="font-bold text-4xl"> Account</h2>
           <div className="flex gap-3  items-center mt-2">
@@ -34,7 +34,7 @@ function Account() {
           </div>
 
           {/* Links */}
-          <div className="flex justify-between gap-10 mt-10">
+          <div className="flex justify-between gap-4 mt-10">
             {/* Personal information */}
             <NavLink to="/account/personal">
               <div className="account-card">

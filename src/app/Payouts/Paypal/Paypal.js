@@ -83,16 +83,16 @@ function Paypal() {
             </p>
 
             {accountType === "personal" && (
-              <div className="border rounded-2xl border-mute py-4">
+              <div className="border rounded-2xl border-mute py-2">
                 <input
-                  className="w-full px-5"
+                  className="w-full px-5 border-transparent focus:border-transparent focus:ring-0"
                   type="text"
                   placeholder="First name"
                 />
 
                 <Border />
                 <input
-                  className="w-full px-5"
+                  className="w-full px-5 border-transparent focus:border-transparent focus:ring-0"
                   type="text"
                   placeholder="Last name"
                 />

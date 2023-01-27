@@ -2,6 +2,7 @@ import React from "react";
 import Border from "../../../../components/Border/Border";
 
 import { IoIosArrowForward } from "react-icons/io";
+import { HiOutlineMail } from "react-icons/hi";
 
 function ExistingAccount({ setExistingModal, setVerifyModal }) {
   return (
@@ -19,7 +20,10 @@ function ExistingAccount({ setExistingModal, setVerifyModal }) {
         }}
         className="cursor-pointer hover:text-primary flex my-5 justify-between items-center"
       >
-        <p>Email</p>
+        <p className="flex items-center text-gray text-lg">
+          {" "}
+          <HiOutlineMail size={24} className="inline-block mr-3" /> Email
+        </p>
         <IoIosArrowForward />
       </div>
 

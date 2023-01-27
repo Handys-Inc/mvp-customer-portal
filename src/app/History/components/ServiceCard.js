@@ -29,7 +29,7 @@ function ServiceCard({ service }) {
         {/* Service Pro */}
         <div>
           <h2 className="font-bold text-gray">{service.name}</h2>
-          <h4 className="text-gray font-semibold">{service.pro}</h4>
+          <h4 className="text-gray font-light text-sm">{service.pro}</h4>
           <p className="mt-2 font-light text-gray text-xs">{service.date}</p>
         </div>
       </div>

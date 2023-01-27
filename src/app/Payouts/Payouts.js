@@ -11,9 +11,14 @@ import { MdArrowForward } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
 function Payouts() {
+  // scroll to top
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [method, setMethod] = useState(null);
   return (
-    <div>
+    <div className="mb-60">
       <PayHeader />
 
       <div className="max-w-xl mx-auto mt-5">
@@ -28,7 +33,7 @@ function Payouts() {
             Billing country / region
           </label>
           <input
-            className="form-input mt-2"
+            className="form-input mt-2 text-gray"
             type="text"
             disabled
             value="Canada"
@@ -66,6 +71,7 @@ function Payouts() {
                     checked={method === "paypal"}
                     onClick={() => setMethod("paypal")}
                     type="radio"
+                    className=""
                   />
                 </div>
               </div>

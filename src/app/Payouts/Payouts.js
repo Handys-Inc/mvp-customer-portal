@@ -33,7 +33,7 @@ function Payouts() {
             Billing country / region
           </label>
           <input
-            className="form-input mt-2"
+            className="form-input mt-2 text-gray"
             type="text"
             disabled
             value="Canada"
@@ -71,6 +71,7 @@ function Payouts() {
                     checked={method === "paypal"}
                     onClick={() => setMethod("paypal")}
                     type="radio"
+                    className=""
                   />
                 </div>
               </div>

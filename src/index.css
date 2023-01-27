@@ -181,3 +181,7 @@ input[type="number"] {
 .digit-input {
   @apply border border-gray w-full rounded-md px-2 py-5 text-center text-2xl;
 }
+
+input[type="radio"] {
+  @apply focus:ring-0 text-primary border-gray;
+}

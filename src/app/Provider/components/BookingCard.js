@@ -25,7 +25,7 @@ function BookingCard() {
           <div className="px-7 py-2">
             <p className=" font-bold text-gray">Date</p>
             <input
-              className="w-full mt-2 focus:outline-none outline-none"
+              className="w-full border-transparent focus:border-transparent focus:ring-0 appearance-none mt-2 focus:outline-none outline-none"
               type="date"
             />
           </div>
@@ -34,7 +34,7 @@ function BookingCard() {
           </div>
           <div className="px-7 py-2">
             <p className=" font-bold text-gray">Number of hours</p>
-            <select className="w-full mt-2">
+            <select className="w-full appearance-none border-transparent focus:border-transparent focus:ring-0 focus:outline-none outline-none border-none mt-2">
               <option>1 hour</option>
               <option>2 hour</option>
               <option>3 hours</option>

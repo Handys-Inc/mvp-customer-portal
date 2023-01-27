@@ -88,7 +88,7 @@ function Payments() {
 
         {/* Tip */}
         <div className="flex-1">
-          <div className="rounded-xl shadow-xl p-5 mt-20">
+          <div className="rounded-xl border border-faintGray shadow-xl p-5 mt-20">
             <img className="my-5" src={sack} alt="sack" />
             <h3 className="text-semibold text-2xl">
               Make all payments through Handys

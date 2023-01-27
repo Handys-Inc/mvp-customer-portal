@@ -48,7 +48,7 @@ function CheckInfo() {
           <img src={applepay} alt="apple pay" />
         </div>
       </div>
-      <select className="w-full mt-2 mb-5 border px-2 py-3 rounded-lg border-mute">
+      <select className="w-full mt-2 mb-5 border px-4 py-3 rounded-lg border-mute">
         <option>Paypal</option>
       </select>
       <p className="text-xs underline my-2">Enter a coupon</p>

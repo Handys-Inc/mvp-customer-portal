@@ -11,9 +11,14 @@ import { MdArrowForward } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
 function Payouts() {
+  // scroll to top
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [method, setMethod] = useState(null);
   return (
-    <div>
+    <div className="mb-60">
       <PayHeader />
 
       <div className="max-w-xl mx-auto mt-5">

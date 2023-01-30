@@ -9,7 +9,7 @@ function DetailsPane() {
       <div className="flex justify-between px-10 my-5">
         <div className="text-left">
           <h3 className="font-semibold text-lg">Jane, Painter</h3>
-          <p className="text-gray text-sm font-light -mt-2">
+          <p className="text-gray text-sm font-light mt-2">
             2-4 years experience
           </p>
 

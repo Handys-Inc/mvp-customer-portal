@@ -189,3 +189,6 @@ input[type="number"] {
 input[type="radio"] {
   @apply focus:ring-0 text-primary border-gray;
 }
+.message-pill {
+  @apply rounded-full bg-faintGray text-xs text-gray py-1 px-4 inline-block;
+}

@@ -20,6 +20,7 @@ import History from "./app/History/History";
 import Payouts from "./app/Payouts/Payouts";
 import Interac from "./app/Payouts/Interac/Interac";
 import Paypal from "./app/Payouts/Paypal/Paypal";
+import Messages from "./app/Messages/Messages";
 
 function App() {
   return (
@@ -42,10 +43,12 @@ function App() {
         <Route path="/service-history" exact element={<History />} />
 
         {/* Payouts */}
-
         <Route path="/setup-payouts" exact element={<Payouts />} />
         <Route path="/setup-payouts/interac" exact element={<Interac />} />
         <Route path="/setup-payouts/paypal" exact element={<Paypal />} />
+
+        {/* Messages */}
+        <Route path="/messages" exact element={<Messages />} />
 
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<Notfound />} />

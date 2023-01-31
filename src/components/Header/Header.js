@@ -24,7 +24,7 @@ function Header() {
     { href: "/", label: "Logout" },
   ];
   return (
-    <div>
+    <div className="z-30">
       <div className="flex flex-row justify-between items-center px-5 pt-5 pb-3">
         <NavLink to="/">
           <img className="w-20 md:w-28" src={logo} alt="Logo" />

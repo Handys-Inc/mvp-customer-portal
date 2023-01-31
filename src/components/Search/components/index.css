@@ -1,0 +1,14 @@
+.general-step {
+  @apply rounded-full py-2 px-3;
+}
+
+.active-step {
+  @apply bg-white rounded-full py-2 shadow-lg px-3;
+}
+
+.step-desc {
+  @apply mt-2 -mb-1 pl-3 text-xs font-semibold;
+}
+.step-input {
+  @apply text-base w-full appearance-none bg-transparent border-transparent  focus:border-transparent focus:ring-0 focus:outline-none outline-none border-none;
+}

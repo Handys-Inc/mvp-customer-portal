@@ -8,10 +8,10 @@ function Search() {
   return (
     <Fragment>
       {searchState ? (
-        <ActiveSearch />
+        <ActiveSearch isOpen={searchState} setIsOpen={setSearchState} />
       ) : (
         <div
-          onClick={() => setSearchState(false)}
+          onClick={() => setSearchState(true)}
           className="flex items-center cursor-pointer  justify-between pl-5 pr-2 py-2 border border-mute shadow-md rounded-full"
         >
           <div class="grid grid-cols-4 divide-mute text-sm gap-7 divide-x text-center text-gray">

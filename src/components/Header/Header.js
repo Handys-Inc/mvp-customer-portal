@@ -12,6 +12,7 @@ import { NavLink } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 
 import Profile from "../../assets/images/profile.png";
+
 import Notifications from "./components/Notifications";
 
 function Header() {
@@ -23,18 +24,19 @@ function Header() {
     { href: "/help", label: "Help" },
     { href: "/", label: "Logout" },
   ];
+
   return (
-    <div className="z-30">
+    <div className="hidden md:block z-30">
       <div className="flex flex-row justify-between items-center px-5 pt-5 pb-3">
         <NavLink to="/">
           <img className="w-20 md:w-28" src={logo} alt="Logo" />
         </NavLink>
 
         {/* Search */}
-        <Search className="" />
+        <Search className="hidden md:block" />
 
         {/* Profile  */}
-        <div className="flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           <a href="https://service-handys.netlify.app/">
             <p>Switch to service provider</p>
           </a>

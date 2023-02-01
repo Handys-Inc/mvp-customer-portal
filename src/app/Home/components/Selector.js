@@ -31,13 +31,13 @@ function Selector() {
     },
   ];
   return (
-    <div className="my-5">
-      <div className="flex flex-row items-center gap-5 justify-center mb-5">
+    <div className="my-5 ml-5 ">
+      <div className="flex flex-row items-center gap-5 justify-center mb-5 overflow-x-auto scrollbar-hide">
         {selectors.map((selector) => {
           return (
             <div className="selector-container">
               {selector.icon}
-              <span className="ml-2">{selector.name}</span>
+              <span className="ml-0 md:ml-2">{selector.name}</span>
             </div>
           );
         })}

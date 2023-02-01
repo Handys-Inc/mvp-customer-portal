@@ -67,6 +67,18 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+/* hide scrollbar */
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* TAILWIND */
 @tailwind base;
 @tailwind components;
@@ -144,11 +156,11 @@ input[type="number"] {
 /* Selector */
 
 .selector-container {
-  @apply bg-lightSecondary text-sm flex items-center  cursor-pointer font-normal rounded-full px-6 py-3;
+  @apply md:bg-lightSecondary text-sm md:flex items-center  cursor-pointer font-normal rounded-full md:px-6 md:py-3;
 }
 
 .selector-icon {
-  @apply inline-block;
+  @apply block md:inline-block;
 }
 
 /* account */

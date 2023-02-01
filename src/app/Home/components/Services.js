@@ -78,7 +78,7 @@ function Services() {
   ];
   return (
     <div className="px-5 mb-32">
-      <div className="grid grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
         {services.map((service) => {
           return <ServiceCard id={service.id} service={service} />;
         })}

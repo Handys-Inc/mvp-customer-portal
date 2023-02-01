@@ -3,7 +3,7 @@
 }
 
 .active-step {
-  @apply bg-white rounded-full py-2 shadow-lg px-3;
+  @apply bg-white relative rounded-full py-2 shadow-lg px-3;
 }
 
 .step-desc {

@@ -129,6 +129,10 @@ input[type="number"] {
   @apply w-full border border-mute rounded-md px-5 py-3;
 }
 
+.form-input-dark {
+  @apply w-full border text-sm border-gray rounded-md px-5 py-3;
+}
+
 .auth-social-btn {
   @apply w-full border  border-black px-3 rounded-md my-2 py-3;
 }

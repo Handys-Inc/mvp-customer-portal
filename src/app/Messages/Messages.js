@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 
-import Header from "../../components/Header/Header";
 import Selector from "./components/Selector";
 import MessageView from "./components/MessageView";
 import DetailsPane from "./components/DetailsPane";
+import Layout from "../../components/Layout/Layout";
 
 function Messages() {
   const [details, setDetails] = useState(true);
   return (
-    <div>
-      <Header />
-
+    <Layout>
       {/* Messages panes */}
 
-      <div className="flex justify-between flex-row divide-x divide-faintGray">
+      {/* Mobile Screens */}
+      <div className="block md:hidden">
+        <Selector />
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:blockflex justify-between flex-row divide-x divide-faintGray">
         <div
           className={`${details ? "basis-1/4" : "basis-1/3"}   min-h-screen`}
         >
@@ -30,7 +34,7 @@ function Messages() {
           <DetailsPane />
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 

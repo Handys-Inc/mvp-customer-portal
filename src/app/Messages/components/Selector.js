@@ -4,7 +4,6 @@ import RawBorder from "../../../components/Border/RawBorder";
 import profile from "../../../assets/images/pro.png";
 
 import dot from "../../../assets/icons/dot.svg";
-import Border from "../../../components/Border/Border";
 
 function Selector() {
   return (

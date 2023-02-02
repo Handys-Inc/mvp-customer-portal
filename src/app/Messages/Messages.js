@@ -17,7 +17,7 @@ function Messages() {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:blockflex justify-between flex-row divide-x divide-faintGray">
+      <div className="hidden md:flex justify-between flex-row divide-x divide-faintGray">
         <div
           className={`${details ? "basis-1/4" : "basis-1/3"}   min-h-screen`}
         >

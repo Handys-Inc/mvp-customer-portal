@@ -27,14 +27,14 @@ function BottomNav({ showBottomNav }) {
       } justify-between text-sm px-4 py-6 pb-8 items-center md:hidden absolute bottom-0 bg-white  w-full shadow-md border border-faintGray`}
     >
       {/* search */}
-      <div className="flex flex-col items-center">
-        <Search fill={path === "search" ? active : mute} size={22} />
-        <p
-          className={`${path === "search" ? "text-primary" : "text-gray"} mt-2`}
-        >
-          Search
-        </p>
-      </div>
+      <NavLink to="/">
+        <div className="flex flex-col items-center">
+          <Search fill={path === " " ? active : mute} size={22} />
+          <p className={`${path === " " ? "text-primary" : "text-gray"} mt-2`}>
+            Search
+          </p>
+        </div>
+      </NavLink>
 
       {/* Notifications */}
       <NavLink to="/notifications">

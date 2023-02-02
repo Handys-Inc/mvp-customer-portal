@@ -7,36 +7,85 @@ import Time from "./assets/Time";
 import Inbox from "./assets/Inbox";
 import Profile from "./assets/Profile";
 
-function BottomNav() {
+// router
+import { useLocation, NavLink } from "react-router-dom";
+
+function BottomNav({ showBottomNav }) {
+  const location = useLocation();
+
+  let path = location.pathname.substring(1);
+
+  console.log(path);
+
+  const mute = "#626262";
+  const active = "#CE1449";
+
   return (
-    <div className="flex justify-between text-sm px-4 py-6 pb-8 items-center md:hidden absolute bottom-0 bg-white  w-full shadow-md border border-faintGray">
+    <div
+      className={`${
+        showBottomNav ? "flex " : "hidden"
+      } justify-between text-sm px-4 py-6 pb-8 items-center md:hidden absolute bottom-0 bg-white  w-full shadow-md border border-faintGray`}
+    >
       {/* search */}
       <div className="flex flex-col items-center">
-        <Search fill="#626262" size={22} />
-        <p className="mt-2">Search</p>
+        <Search fill={path === "search" ? active : mute} size={22} />
+        <p
+          className={`${path === "search" ? "text-primary" : "text-gray"} mt-2`}
+        >
+          Search
+        </p>
       </div>
 
       {/* Notifications */}
-      <div className="flex flex-col items-center">
-        <Notif fill="#626262" size={22} />
-        <p className="mt-2">Notifications</p>
-      </div>
+      <NavLink to="/notifications">
+        <div className="flex flex-col items-center">
+          <Notif fill={path === "notifications" ? active : mute} size={22} />
+          <p
+            className={`${
+              path === "notifications" ? "text-primary" : "text-gray"
+            } mt-2`}
+          >
+            Notifications
+          </p>
+        </div>
+      </NavLink>
 
       {/* history */}
-      <div className="flex flex-col items-center">
-        <Time fill="#626262" size={22} />
-        <p className="mt-2">History</p>
-      </div>
+      <NavLink to="/service-history">
+        <div className="flex flex-col items-center">
+          <Time fill={path === "service-history" ? active : mute} size={22} />
+          <p
+            className={`${
+              path === "service-history" ? "text-primary" : "text-gray"
+            } mt-2`}
+          >
+            History
+          </p>
+        </div>
+      </NavLink>
 
       {/* Inbox */}
       <div className="flex flex-col items-center">
-        <Inbox fill="#626262" size={22} />
-        <p className="mt-2">Inbox</p>
+        <Inbox fill={path === "messages" ? active : mute} size={22} />
+        <p
+          className={`${
+            path === "messages" ? "text-primary" : "text-gray"
+          } mt-2`}
+        >
+          Inbox
+        </p>
       </div>
 
       {/* Profile */}
       <div className="flex flex-col items-center">
-        <Profile fill="#626262" size={22} /> <p className="mt-2">Profile</p>
+        <Profile fill={path === "profile" ? active : mute} size={22} />{" "}
+        <p
+          className={`${
+            path === "profile" ? "text-primary" : "text-gray"
+          } mt-2`}
+        >
+          Profile
+        </p>
       </div>
     </div>
   );

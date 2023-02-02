@@ -21,6 +21,7 @@ import Payouts from "./app/Payouts/Payouts";
 import Interac from "./app/Payouts/Interac/Interac";
 import Paypal from "./app/Payouts/Paypal/Paypal";
 import Messages from "./app/Messages/Messages";
+import MobileNotifications from "./app/Notifications/mobile/MobileNotifications";
 
 function App() {
   return (
@@ -49,6 +50,9 @@ function App() {
 
         {/* Messages */}
         <Route path="/messages" exact element={<Messages />} />
+
+        {/* MOBILE SPECIFIC ROUTES */}
+        <Route path="/notifications" exact element={<MobileNotifications />} />
 
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<Notfound />} />

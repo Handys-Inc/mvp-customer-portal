@@ -33,7 +33,7 @@ export default function Modal({ isOpen, setIsOpen, title, children }) {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center md:pt-4 md:pb-4 md:px-4 pt-20 pb-0 px-0 text-center">
+            <div className="flex min-h-full md:items-center justify-center md:pt-4 md:pb-4 md:px-4 pt-20 pb-0 px-0 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -43,8 +43,8 @@ export default function Modal({ isOpen, setIsOpen, title, children }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full md:max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-center align-bottom md:align-middle shadow-2xl transition-all">
-                  <div className=" flex flex-row justify-between">
+                <Dialog.Panel className="w-full md:max-w-2xl transform overflow-hidden rounded-none md:rounded-2xl bg-white p-6 text-center align-bottom md:align-middle shadow-2xl transition-all">
+                  <div className=" flex flex-row justify-between mb-5 md:mb-0">
                     <Dialog.Title
                       as="h2"
                       className="md:text-2xl mx-auto text-center text-lg font-bold md:font-medium leading-6 text-gray-900"

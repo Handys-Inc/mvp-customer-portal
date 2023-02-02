@@ -182,7 +182,7 @@ function FourStep() {
           </div>
 
           {/* Date Range Picker */}
-          <div className="my-5 text-center">
+          <div className="my-1 text-center">
             <Datepicker selected={selected} setSelected={setSelected} />
           </div>
           {/* button */}

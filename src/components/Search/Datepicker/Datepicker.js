@@ -8,7 +8,7 @@ import "./index.css";
 export default function Datepicker({ selected, setSelected }) {
   return (
     <DayPicker
-      className="text-xs mx-auto inline-block"
+      className="text-sm mx-auto inline-block"
       mode="range"
       numberOfMonths={2}
       selected={selected}

@@ -15,8 +15,6 @@ function BottomNav({ showBottomNav }) {
 
   let path = location.pathname.substring(1);
 
-  console.log(path);
-
   const mute = "#626262";
   const active = "#CE1449";
 
@@ -29,8 +27,8 @@ function BottomNav({ showBottomNav }) {
       {/* search */}
       <NavLink to="/">
         <div className="flex flex-col items-center">
-          <Search fill={path === " " ? active : mute} size={22} />
-          <p className={`${path === " " ? "text-primary" : "text-gray"} mt-2`}>
+          <Search fill={path === "" ? active : mute} size={22} />
+          <p className={`${path === "" ? "text-primary" : "text-gray"} mt-2`}>
             Search
           </p>
         </div>

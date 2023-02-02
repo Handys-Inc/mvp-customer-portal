@@ -1,9 +1,9 @@
 import React from "react";
 
-import Header from "../../../components/Header/Header";
-
 import Border from "../../../components/Border/Border";
 import AccountHeader from "../components/AccountHeader";
+
+import Layout from "../../../components/Layout/Layout";
 
 function PersonalInfo() {
   const data = [
@@ -15,8 +15,7 @@ function PersonalInfo() {
     { title: "Address", content: "Not Provided" },
   ];
   return (
-    <div>
-      <Header />
+    <Layout showBottomNav={false}>
       <AccountHeader title="Personal Info" />
 
       <div className="max-w-5xl mx-auto">
@@ -26,12 +25,16 @@ function PersonalInfo() {
               <div className="w-full">
                 <div className="flex justify-between">
                   <div>
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="text-lg text-gray font-light">
+                    <h3 className="text-base md:text-xl font-bold">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm md:text-lg text-gray font-light">
                       {item.content}
                     </p>
                   </div>
-                  <p className="underline cursor-pointer">Edit</p>
+                  <p className="underline hover:text-primary cursor-pointer">
+                    Edit
+                  </p>
                 </div>
                 <Border />
               </div>
@@ -39,7 +42,7 @@ function PersonalInfo() {
           })}
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 

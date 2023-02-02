@@ -1,10 +1,12 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
-
-import { Dialog, Transition } from "@headlessui/react";
+import React, { useState } from "react";
 
 import pro from "../../../assets/images/pro.png";
 
 import { FiSearch } from "react-icons/fi";
+
+import { format } from "date-fns";
+
+import Datepicker from "../Datepicker/Datepicker";
 
 import "./index.css";
 
@@ -20,6 +22,11 @@ function FourStep() {
   const [showLong, setShowLong] = useState(false);
 
   // counter
+
+  // date
+  const [selected, setSelected] = useState(new Date());
+
+  // number of hours
   const [counter, setCounter] = useState(1);
 
   return (
@@ -67,6 +74,7 @@ function FourStep() {
                 setShowDate(true);
               }}
               className="step-input"
+              // value={format(selected, "PP")}
               placeholder="Add Date"
               type="text"
             />
@@ -165,7 +173,7 @@ function FourStep() {
 
       {/* DATE DIV */}
       {showDate && step === "when" && (
-        <div className="w-full inline-block bg-white shadow-xl p-8 mt-2 rounded-2xl border border-faintGray">
+        <div className="w-full mx-auto text-center inline-block bg-white shadow-xl p-8 mt-2 rounded-2xl border border-faintGray">
           <div className="text-center mb-5">
             <h3 className="text-lg">When will you be home?</h3>
             <p className="font-light tex-gray text-sm">
@@ -174,7 +182,9 @@ function FourStep() {
           </div>
 
           {/* Date Range Picker */}
-          <div className="my-5 text-center"></div>
+          <div className="my-1 text-center">
+            <Datepicker selected={selected} setSelected={setSelected} />
+          </div>
           {/* button */}
           <button className="w-full btn-primary">Set date</button>
         </div>

@@ -5,14 +5,16 @@ import { NavLink } from "react-router-dom";
 
 import { MdArrowBack } from "react-icons/md";
 
+import Layout from "../../../components/Layout/Layout";
+
 function Interac() {
   const [email, setEmail] = useState(null);
   return (
-    <div>
+    <Layout showBottomNav={false}>
       <PayHeader />
 
-      <div className="max-w-xl mx-auto mt-5">
-        <h2 className="text-3xl font-medium">
+      <div className="w-full md:max-w-xl mx-auto mt-5">
+        <h2 className="text-2xl md:text-3xl font-medium">
           Please type in your Interac email
         </h2>
         <p className="text-normal font-mute mt-2">
@@ -42,7 +44,7 @@ function Interac() {
           </button>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 

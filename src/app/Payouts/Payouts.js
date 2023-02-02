@@ -10,6 +10,9 @@ import { MdArrowForward } from "react-icons/md";
 
 import { NavLink } from "react-router-dom";
 
+// layout
+import Layout from "../../components/Layout/Layout";
+
 function Payouts() {
   // scroll to top
   React.useEffect(() => {
@@ -18,7 +21,7 @@ function Payouts() {
 
   const [method, setMethod] = useState(null);
   return (
-    <div className="mb-60">
+    <Layout showBottomNav={false} className="mb-60">
       <PayHeader />
 
       <div className="max-w-xl mx-auto mt-5">
@@ -117,7 +120,7 @@ function Payouts() {
           </NavLink>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 

@@ -1,5 +1,7 @@
 import React, { useState, Fragment } from "react";
 
+import Layout from "../../../components/Layout/Layout";
+
 import PayHeader from "../components/PayHeader";
 
 import { NavLink } from "react-router-dom";
@@ -24,7 +26,7 @@ function Paypal() {
   const [verifyModal, setVerifyModal] = useState(false);
 
   return (
-    <div>
+    <Layout showBottomNav={false}>
       <PayHeader />
 
       <div className="max-w-xl mx-auto mt-5">
@@ -155,7 +157,7 @@ function Paypal() {
       <Modal title="" isOpen={verifyModal} setIsOpen={setVerifyModal}>
         <Verify />
       </Modal>
-    </div>
+    </Layout>
   );
 }
 

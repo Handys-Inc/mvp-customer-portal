@@ -65,28 +65,33 @@ function BottomNav({ showBottomNav }) {
       </NavLink>
 
       {/* Inbox */}
-      <div className="flex flex-col items-center">
-        <Inbox fill={path === "messages" ? active : mute} size={22} />
-        <p
-          className={`${
-            path === "messages" ? "text-primary" : "text-gray"
-          } mt-2`}
-        >
-          Inbox
-        </p>
-      </div>
+      <NavLink to="/messages">
+        {" "}
+        <div className="flex flex-col items-center">
+          <Inbox fill={path === "messages" ? active : mute} size={22} />
+          <p
+            className={`${
+              path === "messages" ? "text-primary" : "text-gray"
+            } mt-2`}
+          >
+            Inbox
+          </p>
+        </div>
+      </NavLink>
 
       {/* Profile */}
-      <div className="flex flex-col items-center">
-        <Profile fill={path === "profile" ? active : mute} size={22} />{" "}
-        <p
-          className={`${
-            path === "profile" ? "text-primary" : "text-gray"
-          } mt-2`}
-        >
-          Profile
-        </p>
-      </div>
+      <NavLink to="/account">
+        <div className="flex flex-col items-center">
+          <Profile fill={path === "account" ? active : mute} size={22} />{" "}
+          <p
+            className={`${
+              path === "account" ? "text-primary" : "text-gray"
+            } mt-2`}
+          >
+            Profile
+          </p>
+        </div>
+      </NavLink>
     </div>
   );
 }

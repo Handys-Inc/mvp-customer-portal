@@ -14,7 +14,7 @@ function NoHistory() {
         </p>
         <button className="btn-primary">Start searching</button>
       </div>
-      <div className="hidden md:flex-1">
+      <div className="hidden md:block md:flex-1">
         <img
           className="rounded-tr-xl rounded-br-xl"
           src={cleaner}

@@ -1,5 +1,7 @@
 import React from "react";
-import Header from "../../components/Header/Header";
+
+// layout
+import Layout from "../../components/Layout/Layout";
 
 // icons
 import badge from "../../assets/icons/badge.svg";
@@ -12,14 +14,12 @@ import { NavLink } from "react-router-dom";
 
 function Account() {
   return (
-    <div>
-      <Header />
-
+    <Layout>
       <div className="account-content-holder mx-auto">
         <div>
-          <h2 className="font-bold text-4xl"> Account</h2>
+          <h2 className="font-bold text-2xl md:text-4xl"> Account</h2>
           <div className="flex gap-3  items-center mt-2">
-            <p className="text-xl">
+            <p className="text-base md:text-xl">
               Alice Irs,{" "}
               <span className="font-light text-gray text-lg">
                 aliceirs@handys.ca
@@ -34,13 +34,17 @@ function Account() {
           </div>
 
           {/* Links */}
-          <div className="flex justify-between gap-4 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
             {/* Personal information */}
             <NavLink to="/account/personal">
               <div className="account-card">
-                <img className="mb-4 w-10" src={badge} alt="badge" />
+                <img
+                  className="mb-0 md:mb-4 w-6 md:w-10"
+                  src={badge}
+                  alt="badge"
+                />
                 <h3>Personal Information</h3>
-                <p className="w-4/5">
+                <p className="hidden md:block w-4/5">
                   Provide personal details and how we can reach you
                 </p>
               </div>
@@ -48,9 +52,13 @@ function Account() {
             {/* Login & Security */}
             <NavLink to="/account/security">
               <div className="account-card">
-                <img className="mb-4 w-10" src={shield} alt="badge" />
+                <img
+                  className="mb-0 md:mb-4 w-6 md:w-10"
+                  src={shield}
+                  alt="badge"
+                />
                 <h3>Login & Secrity</h3>
-                <p className="w-4/5">
+                <p className="hidden md:block w-4/5">
                   Update your password and secure your account
                 </p>
               </div>
@@ -58,9 +66,13 @@ function Account() {
             {/* Payments and Payouts */}
             <NavLink to="/account/payments">
               <div className="account-card">
-                <img className="mb-4 w-10" src={money} alt="badge" />
+                <img
+                  className="mb-0 md:mb-4 w-6 md:w-10"
+                  src={money}
+                  alt="badge"
+                />
                 <h3>Payments & Payouts</h3>
-                <p className="w-4/5">
+                <p className="hidden md:block w-4/5">
                   Review payments, payouts, coupons, gift cards, and taxes
                 </p>
               </div>
@@ -68,7 +80,7 @@ function Account() {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 

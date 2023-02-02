@@ -15,8 +15,6 @@ function BottomNav({ showBottomNav }) {
 
   let path = location.pathname.substring(1);
 
-  console.log("path", path);
-
   const mute = "#626262";
   const active = "#CE1449";
 

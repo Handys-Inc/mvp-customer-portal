@@ -33,7 +33,7 @@ export default function Modal({ isOpen, setIsOpen, title, children }) {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full md:items-center justify-center md:pt-4 md:pb-4 md:px-4 pt-20 pb-0 px-0 text-center">
+            <div className="flex absolute md:relative md:min-h-screen min-h-auto  w-full bottom-0 md:items-center md:justify-center md:pt-4 md:pb-4 md:px-4 pt-20 pb-0 px-0 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"

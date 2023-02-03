@@ -24,6 +24,7 @@ function BottomNav({ showBottomNav }) {
         showBottomNav ? "flex " : "hidden"
       } justify-between text-sm px-4 py-6 pb-8 items-center md:hidden absolute bottom-0 bg-white  w-full shadow-md border border-faintGray`}
     >
+      {/* MODAL FOR MOBILE SEARCH */}
       {/* search */}
       <NavLink to="/">
         <div className="flex flex-col items-center">

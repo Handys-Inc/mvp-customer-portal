@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 // custom svgs
 import Broom from "../../../assets/icons/svg/Broom";
@@ -31,23 +31,26 @@ function Selector() {
     },
   ];
   return (
-    <div className="my-5 ml-5 ">
-      <div className="flex flex-row items-center gap-5 justify-center mb-5 overflow-x-auto scrollbar-hide">
+    <Fragment className="">
+      <div className="w-full overflow-x-auto flex mt-5 flex-row items-center space-x-5 justify-center mb-5">
         {selectors.map((selector) => {
           return (
             <div className="selector-container">
               {selector.icon}
-              <span className="ml-0 md:ml-2">{selector.name}</span>
+
+              <p className="ml-0 mt-2 md:mt-0 md:ml-2">{selector.name}</p>
             </div>
           );
         })}
       </div>
 
-      <div className="text-faintGray">
+      <div className="text-faintGray mb-5">
         <hr />
       </div>
-    </div>
+    </Fragment>
   );
 }
 
 export default Selector;
+
+// <div className="w-full overflow-x-auto scrollbar-hide my-5 ml-5 md:ml-0"></div>

@@ -5,7 +5,7 @@ import Layout from "../../components/Layout/Layout";
 
 import { FiSearch } from "react-icons/fi";
 import { BsSliders } from "react-icons/bs";
-import FullModal from "../../components/FullModal/FullModal";
+import Modal from "../../components/Modal/Modal";
 import MobileSearch from "../MobileSearch/MobileSearch";
 
 function Home() {
@@ -38,13 +38,14 @@ function Home() {
         </div>
 
         {/* MODAL FOR Mobile Search */}
-        <FullModal
+        <Modal
+          full={true}
           isOpen={showMobileSearch}
           setIsOpen={setShowMobileSearch}
           title="Search"
         >
           <MobileSearch />
-        </FullModal>
+        </Modal>
 
         <Selector />
 

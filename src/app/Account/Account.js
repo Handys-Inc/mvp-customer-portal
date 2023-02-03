@@ -11,11 +11,16 @@ import dot from "../../assets/icons/dot.svg";
 
 // navlink
 import { NavLink } from "react-router-dom";
+import { RiAccountBoxLine } from "react-icons/ri";
+
+import { IoIosArrowForward } from "react-icons/io";
+import { FiHelpCircle } from "react-icons/fi";
 
 function Account() {
   return (
     <Layout>
-      <div className="account-content-holder mx-auto">
+      {/* Desktop view */}
+      <div className="hidden md:block account-content-holder mx-auto">
         <div>
           <h2 className="font-bold text-2xl md:text-4xl"> Account</h2>
           <div className="flex gap-3  items-center mt-2">
@@ -78,6 +83,44 @@ function Account() {
               </div>
             </NavLink>
           </div>
+        </div>
+      </div>
+
+      {/* mobile account */}
+      <div className="flex flex-col justify-between h-[85vh]  w-full items-end md:hidden">
+        <div className="mt-10 w-full">
+          <p className="text-left font-bold text-2xl">Profile</p>
+        </div>
+        <div className="w-full">
+          {/* Account and get help */}
+          <div className="flex justify-between py-4 text-lg items-center text-gray">
+            <div className="flex gap-3 items-center ">
+              <RiAccountBoxLine size={24} />
+              Account
+            </div>
+            <div>
+              <IoIosArrowForward />
+            </div>
+          </div>
+
+          {/* help */}
+          <div className="flex justify-between py-4 text-lg items-center text-gray">
+            <div className="flex gap-3 items-center ">
+              <FiHelpCircle size={24} />
+              Get Help
+            </div>
+            <div>
+              <IoIosArrowForward />
+            </div>
+          </div>
+
+          <a href="https://service-handys.netlify.app/">
+            <button className="btn-primary-outline w-full mb-3">
+              Switch to provide service
+            </button>
+          </a>
+
+          <button className="btn-primary w-full mb-2">Log Out</button>
         </div>
       </div>
     </Layout>

@@ -1,0 +1,11 @@
+.mobile-search-card {
+  @apply shadow-md border-faintGray border rounded-xl p-3 mb-5;
+}
+
+.search-header {
+  @apply mb-3 font-semibold text-lg items-center flex justify-between;
+}
+
+.search-desc {
+  @apply font-light text-sm;
+}

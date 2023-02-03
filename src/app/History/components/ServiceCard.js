@@ -9,6 +9,7 @@ import prov from "../../../assets/images/prov-1.png";
 
 function ServiceCard({ service }) {
   const [detailsModal, setDetailsModal] = useState(false);
+
   const [reportModal, setReportModal] = useState(false);
 
   return (
@@ -36,6 +37,8 @@ function ServiceCard({ service }) {
 
       {/* Service Info */}
       <Modal
+        full={true}
+        back={true}
         title="Service info"
         isOpen={detailsModal}
         setIsOpen={setDetailsModal}

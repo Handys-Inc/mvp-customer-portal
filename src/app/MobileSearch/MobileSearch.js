@@ -177,7 +177,13 @@ function MobileSearch() {
             </div>
 
             <Border />
-            <div className="flex flex-between justify-end">
+            <div className="flex justify-between">
+              <p
+                onClick={() => setStep("what")}
+                className="underline underline-offset-4"
+              >
+                Clear All
+              </p>
               <button className="btn-primary">Search</button>
             </div>
           </div>

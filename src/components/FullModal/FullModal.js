@@ -2,8 +2,15 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useEffect } from "react";
 
 import { GrClose } from "react-icons/gr";
+import { MdArrowBack } from "react-icons/md";
 
-export default function Modal({ isOpen, setIsOpen, title, children }) {
+export default function Modal({
+  back = false,
+  isOpen,
+  setIsOpen,
+  title,
+  children,
+}) {
   function closeModal() {
     setIsOpen(false);
   }
@@ -33,7 +40,7 @@ export default function Modal({ isOpen, setIsOpen, title, children }) {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-screen min-h-auto  w-full bottom-0 md:items-center md:justify-center md:pt-4 md:pb-4 md:px-4  pb-0 px-0">
+            <div className="flex min-h-screen  w-full bottom-0 md:items-center md:justify-center md:pt-4 md:pb-4 md:px-4  pb-0 px-0">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -47,8 +54,11 @@ export default function Modal({ isOpen, setIsOpen, title, children }) {
                   <div className="flex flex-row justify-between mt-2 mb-5 md:mb-0">
                     <Dialog.Title
                       as="h2"
-                      className=" text-left text-xl font-semibold text-black"
+                      className=" text-left text-xl flex items-center font-semibold text-black"
                     >
+                      {back && (
+                        <MdArrowBack className="mr-3 inline" size={18} />
+                      )}
                       {title}
                     </Dialog.Title>
                     <GrClose

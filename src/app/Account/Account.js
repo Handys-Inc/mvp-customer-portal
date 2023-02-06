@@ -93,26 +93,30 @@ function Account() {
         </div>
         <div className="w-full">
           {/* Account and get help */}
-          <div className="flex justify-between py-4 text-lg items-center text-gray">
-            <div className="flex gap-3 items-center ">
-              <RiAccountBoxLine size={24} />
-              Account
+          <NavLink to="/m/account">
+            <div className="flex justify-between py-4 text-lg items-center text-gray">
+              <div className="flex gap-3 items-center ">
+                <RiAccountBoxLine size={24} />
+                Account
+              </div>
+              <div>
+                <IoIosArrowForward />
+              </div>
             </div>
-            <div>
-              <IoIosArrowForward />
-            </div>
-          </div>
+          </NavLink>
 
           {/* help */}
-          <div className="flex justify-between py-4 text-lg items-center text-gray">
-            <div className="flex gap-3 items-center ">
-              <FiHelpCircle size={24} />
-              Get Help
+          <NavLink to="/m/help">
+            <div className="flex justify-between py-4 text-lg items-center text-gray">
+              <div className="flex gap-3 items-center ">
+                <FiHelpCircle size={24} />
+                Get Help
+              </div>
+              <div>
+                <IoIosArrowForward />
+              </div>
             </div>
-            <div>
-              <IoIosArrowForward />
-            </div>
-          </div>
+          </NavLink>
 
           <a href="https://service-handys.netlify.app/">
             <button className="btn-primary-outline w-full mb-3">

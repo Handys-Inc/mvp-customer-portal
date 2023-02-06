@@ -2,12 +2,19 @@ import React from "react";
 import Header from "../Header/Header";
 import BottomNav from "../BottomNav/BottomNav";
 
-function Layout({ children, showBottomNav = true }) {
+function Layout({
+  showHeader = true,
+  children,
+  current,
+  showBottomNav = true,
+}) {
+  // Current is used to render out the active navbar icon
+
   return (
     <div className="h-screen w-full overflow-y-auto">
-      <Header />
+      {showHeader ? <Header /> : null}
       <div className="px-5 md:px-0">{children}</div>
-      <BottomNav showBottomNav={showBottomNav} />
+      <BottomNav current={current} showBottomNav={showBottomNav} />
     </div>
   );
 }

@@ -21,7 +21,7 @@ function Payouts() {
 
   const [method, setMethod] = useState(null);
   return (
-    <Layout showBottomNav={false} className="mb-60">
+    <Layout showHeader={false} showBottomNav={false} className="mb-60">
       <PayHeader />
 
       <div className="max-w-xl mx-auto mt-5">

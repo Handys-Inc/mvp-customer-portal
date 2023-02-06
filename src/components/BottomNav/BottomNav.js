@@ -10,7 +10,7 @@ import Profile from "./assets/Profile";
 // router
 import { useLocation, NavLink } from "react-router-dom";
 
-function BottomNav({ showBottomNav }) {
+function BottomNav({ showBottomNav, current }) {
   const location = useLocation();
 
   let path = location.pathname.substring(1);
@@ -81,10 +81,15 @@ function BottomNav({ showBottomNav }) {
       {/* Profile */}
       <NavLink to="/account">
         <div className="flex flex-col items-center">
-          <Profile fill={path === "account" ? active : mute} size={22} />{" "}
+          <Profile
+            fill={path === "account" || current === "account" ? active : mute}
+            size={22}
+          />{" "}
           <p
             className={`${
-              path === "account" ? "text-primary" : "text-gray"
+              path === "account" || current === "account"
+                ? "text-primary"
+                : "text-gray"
             } mt-2`}
           >
             Profile

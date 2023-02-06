@@ -21,7 +21,11 @@ import Payouts from "./app/Payouts/Payouts";
 import Interac from "./app/Payouts/Interac/Interac";
 import Paypal from "./app/Payouts/Paypal/Paypal";
 import Messages from "./app/Messages/Messages";
+
+// Mobile Only Screens
 import MobileNotifications from "./app/Notifications/mobile/MobileNotifications";
+import MobileHelp from "./app/Help/MobileHelp";
+import MobileAccount from "./app/Account/MobileAccount";
 
 function App() {
   return (
@@ -50,6 +54,10 @@ function App() {
 
         {/* Messages */}
         <Route path="/messages" exact element={<Messages />} />
+
+        {/* Help */}
+        <Route path="/m/help" exact element={<MobileHelp />} />
+        <Route path="/m/account" exact element={<MobileAccount />} />
 
         {/* MOBILE SPECIFIC ROUTES */}
         <Route path="/notifications" exact element={<MobileNotifications />} />

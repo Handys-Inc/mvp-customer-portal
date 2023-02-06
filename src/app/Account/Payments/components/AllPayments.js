@@ -38,6 +38,8 @@ function AllPayments() {
 
       {/* History Modal */}
       <Modal
+        full={true}
+        back={true}
         title="Payments history"
         isOpen={historyModal}
         setIsOpen={setHistoryModal}

@@ -9,29 +9,28 @@ function Messages() {
   const [details, setDetails] = useState(true);
   return (
     <Layout>
-      {/* Messages panes */}
-
       {/* Mobile Screens */}
       <div className="block md:hidden">
         <Selector />
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:flex justify-between flex-row divide-x divide-faintGray">
-        <div
-          className={`${details ? "basis-1/4" : "basis-1/3"}   min-h-screen`}
-        >
+      {/* Selector Pane */}
+      <div className="flex h-[88vh] overflow-y-scroll">
+        <div className="w-[22rem] border-r border-r-faintGray">
           <Selector />
         </div>
-        <div
-          className={`${details ? "basis-1/2" : "basis-2/3"}   min-h-screen`}
-        >
-          <MessageView setDetails={setDetails} details={details} />
-        </div>
-        <div
-          className={`${details ? "block" : "hidden"} basis-1/4  min-h-screen`}
-        >
-          <DetailsPane />
+        <div className="flex flex-1">
+          <div
+            className={`${
+              details ? "w-2/3 border-r border-r-faintGray" : "w-full"
+            }`}
+          >
+            <MessageView setDetails={setDetails} details={details} />
+          </div>
+          <div className={`${details ? "w-1/3" : "hidden w-0"}`}>
+            <DetailsPane />
+          </div>
         </div>
       </div>
     </Layout>

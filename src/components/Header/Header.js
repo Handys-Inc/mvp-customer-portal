@@ -29,7 +29,7 @@ function Header() {
   ];
 
   return (
-    <div className="hidden md:block z-30">
+    <div className="hidden  h-[12vh] md:block z-50">
       <div className="flex flex-row justify-between items-center px-5 pt-5 pb-3">
         <NavLink to="/">
           <img className="w-20 md:w-28" src={logo} alt="Logo" />
@@ -78,7 +78,7 @@ function Header() {
 
           {/* MENU */}
           <div>
-            <Menu as="div" className="relative inline-block text-left">
+            <Menu as="div" className="relative inline-block text-left z-50">
               <div>
                 <Menu.Button className="flex cursor-pointer items-center justify-center w-10 h-10 rounded-full text-center bg-[#F5F5F5] text-black">
                   <HiMenu size={24} className="inline text-center" />

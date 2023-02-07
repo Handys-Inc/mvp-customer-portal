@@ -10,7 +10,7 @@ import { IoImage } from "react-icons/io5";
 
 function MessageView({ setDetails, details }) {
   return (
-    <div>
+    <div className="relative h-[88vh]  overflow-y-scroll">
       {/* Header for who it is and onine status */}
       <div className="h-16 flex justify-between items-center">
         <div>
@@ -30,15 +30,19 @@ function MessageView({ setDetails, details }) {
           </button>
         </div>
       </div>
+
       <RawBorder />
 
       {/* Actual Messages */}
       <div className="w-full text-center mt-5">
         <p>January 13</p>
-        <p className="message-pill">
-          To protect your payment, always communicate and pay through handys
-          website
-        </p>
+        <div>
+          <p className="message-pill">
+            To protect your payment, always communicate and pay through handys
+            website
+          </p>
+        </div>
+
         <p className="message-pill my-3">
           Service providers will not be shown your profile photo until after
           booking is confirmed. <span className="underline">Learn more</span>
@@ -57,7 +61,7 @@ function MessageView({ setDetails, details }) {
           <div className="">
             <img className="w-14" src={profile} alt="provider" />
           </div>
-          <div className="text-left w-80">
+          <div className="text-left w-3/5">
             <h3 className="font-semibold text-base">
               Jane <span className="text-xs text-gray">6:55pm</span>
             </h3>
@@ -78,17 +82,17 @@ function MessageView({ setDetails, details }) {
             </p>
           </div>
         </div>
+      </div>
 
-        {/* Message Input */}
-        <div className="flex gap-4 items-center mx-10">
-          <div className="rounded-full flex items-center justify-center bg-faintGray w-10 h-10">
-            <IoImage />
-          </div>
-          <div className="border border-gray w-full text-left flex justify-between pl-4 pr-2 rounded-full py-1">
-            <input className="appearance-none" placeholder="Message Jane" />
-            <div className="bg-primary h-10 w-10 flex items-center justify-center rounded-full text-white">
-              <BsArrowUp />
-            </div>
+      {/* Message Input */}
+      <div className="absolute bottom-4 w-11/12 bg-white flex gap-4 items-center md:mx-5">
+        <div className="rounded-full flex items-center justify-center bg-faintGray w-10 h-10">
+          <IoImage />
+        </div>
+        <div className="border border-gray w-full text-left flex justify-between pl-4 pr-2 rounded-full py-1">
+          <input className="appearance-none" placeholder="Message Jane" />
+          <div className="bg-primary h-10 w-10 flex items-center justify-center rounded-full text-white">
+            <BsArrowUp />
           </div>
         </div>
       </div>

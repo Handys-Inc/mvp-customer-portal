@@ -5,6 +5,7 @@ import { BsPinAngle } from "react-icons/bs";
 
 import profile from "../../../assets/images/pro.png";
 import { NavLink } from "react-router-dom";
+import Border from "../../../components/Border/Border";
 
 function ProviderDetails() {
   return (
@@ -12,24 +13,26 @@ function ProviderDetails() {
       {/* SUMMARY AND MESSAGE */}
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-5">
-          <h2 className="font-bold text-2xl">James Shepherd, Painter</h2>
+          <h2 className="font-bold text-lg md:text-2xl">
+            James Shepherd, Painter
+          </h2>
           <NavLink to="/messages">
-            <div className="w-10 h-10 bg-mute flex rounded-full hover:bg-primary hover:text-white items-center justify-center">
+            <div className="w-7 h-7 md:w-10 md:h-10 bg-mute flex rounded-full hover:bg-primary hover:text-white items-center justify-center">
               <BiMessageAltDetail size={18} />
             </div>
           </NavLink>
         </div>
 
         <div>
-          <img className="w-14" src={profile} alt="provider" />
+          <img className="w-10 md:w-14" src={profile} alt="provider" />
         </div>
       </div>
-      <p className="text-gray text-lg font-light -mt-3">2-4 years experience</p>
+      <p className="text-gray text-base md:text-lg font-light -mt-3">
+        2-4 years experience
+      </p>
 
       {/* BREAK */}
-      <div className="text-faintGray my-5">
-        <hr />
-      </div>
+      <Border />
 
       {/* INSTANT BOOKING */}
       <div className="flex gap-3">
@@ -44,9 +47,7 @@ function ProviderDetails() {
       </div>
 
       {/* BREAK */}
-      <div className="text-faintGray my-5">
-        <hr />
-      </div>
+      <Border />
 
       {/* ABOUT */}
       <div>

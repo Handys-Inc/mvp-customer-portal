@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 function BookingCard() {
   return (
     <div>
-      <div className="rounded-xl shadow-lg border border-faintGray max-w-xl p-10">
+      <div className="rounded-xl shadow-none md:shadow-lg border border-faintGray max-w-xl p-5 md:p-10">
         <div className="flex justify-between">
           <p className="text-gray text-lg">
             <span className="font-bold text-black text-2xl">$65 </span> per hour

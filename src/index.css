@@ -181,7 +181,7 @@ input[type="number"] {
 }
 
 .general-card {
-  @apply shadow-xl rounded-2xl p-10;
+  @apply shadow-xl rounded-2xl p-5 md:p-10;
 }
 
 .h3-header {

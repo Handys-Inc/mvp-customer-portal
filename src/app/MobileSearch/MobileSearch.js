@@ -59,6 +59,11 @@ function MobileSearch() {
                 </div>
               </div>
             </div>
+            <div className="flex flex-between justify-end">
+              <button onClick={() => setStep("where")} className="btn-primary">
+                Next
+              </button>
+            </div>
           </div>
         )}
       </div>

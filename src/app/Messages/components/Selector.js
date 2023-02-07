@@ -7,7 +7,7 @@ import dot from "../../../assets/icons/dot.svg";
 
 function Selector() {
   return (
-    <div>
+    <div className="h-[88vh] overflow-y-scroll">
       <div className="h-16 flex items-center">
         <h3 className="font-bold text-xl place-self-center md:ml-10">
           All Messages
@@ -70,6 +70,57 @@ function Selector() {
       <RawBorder />
 
       {/* 4 */}
+      <div className="flex gap-5 p-5 hover:bg-faintGray cursor-pointer rounded-2xl m-2">
+        <div>
+          <img className="w-24" src={profile} alt="provider" />
+        </div>
+        <div className="text-left">
+          <h3 className="font-bold text-xl">Jane, Painter</h3>
+          <p className="text-gray text-sm font-semibold">
+            Hello Alice, I'd like to know when you'll be available
+          </p>
+          <div className="text-gray mt-2 flex text-xs gap-2 items-center">
+            Booking Completed <img className="mt-1" src={dot} alt="dot" /> Jan
+            13
+          </div>
+        </div>
+      </div>
+
+      {/* 5 */}
+      <div className="flex gap-5 p-5 hover:bg-faintGray cursor-pointer rounded-2xl m-2">
+        <div>
+          <img className="w-24" src={profile} alt="provider" />
+        </div>
+        <div className="text-left">
+          <h3 className="font-bold text-xl">Jane, Painter</h3>
+          <p className="text-gray text-sm font-semibold">
+            Hello Alice, I'd like to know when you'll be available
+          </p>
+          <div className="text-gray mt-2 flex text-xs gap-2 items-center">
+            Booking Completed <img className="mt-1" src={dot} alt="dot" /> Jan
+            13
+          </div>
+        </div>
+      </div>
+
+      {/* 6 */}
+      <div className="flex gap-5 p-5 hover:bg-faintGray cursor-pointer rounded-2xl m-2">
+        <div>
+          <img className="w-24" src={profile} alt="provider" />
+        </div>
+        <div className="text-left">
+          <h3 className="font-bold text-xl">Jane, Painter</h3>
+          <p className="text-gray text-sm font-semibold">
+            Hello Alice, I'd like to know when you'll be available
+          </p>
+          <div className="text-gray mt-2 flex text-xs gap-2 items-center">
+            Booking Completed <img className="mt-1" src={dot} alt="dot" /> Jan
+            13
+          </div>
+        </div>
+      </div>
+
+      {/* 7 */}
       <div className="flex gap-5 p-5 hover:bg-faintGray cursor-pointer rounded-2xl m-2">
         <div>
           <img className="w-24" src={profile} alt="provider" />

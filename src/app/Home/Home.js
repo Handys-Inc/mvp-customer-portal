@@ -8,6 +8,8 @@ import { BsSliders } from "react-icons/bs";
 import Modal from "../../components/Modal/Modal";
 import MobileSearch from "../MobileSearch/MobileSearch";
 
+// css
+
 function Home() {
   // scroll to top
   React.useEffect(() => {

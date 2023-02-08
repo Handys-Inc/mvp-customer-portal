@@ -4,7 +4,7 @@ import logo from "../../assets/logo/logo.svg";
 
 import Search from "../Search/Search";
 
-import { Menu, Transition, Dialog } from "@headlessui/react";
+import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
 import { NavLink } from "react-router-dom";
@@ -14,6 +14,7 @@ import { HiMenu } from "react-icons/hi";
 import Profile from "../../assets/images/profile.png";
 
 import Bell from "../../assets/icons/svg/Bell";
+
 import Notifications from "../../app/Notifications/Notifications";
 
 function Header() {

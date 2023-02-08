@@ -4,6 +4,7 @@ import Selector from "./components/Selector";
 import MessageView from "./components/MessageView";
 import DetailsPane from "./components/DetailsPane";
 import Layout from "../../components/Layout/Layout";
+import MobileInbox from "./Mobile/MobileInbox";
 
 function Messages() {
   const [details, setDetails] = useState(true);
@@ -11,12 +12,12 @@ function Messages() {
     <Layout>
       {/* Mobile Screens */}
       <div className="block md:hidden">
-        <Selector />
+        <MobileInbox />
       </div>
 
       {/* Desktop */}
       {/* Selector Pane */}
-      <div className="flex h-[88vh] overflow-y-scroll">
+      <div className="hidden md:flex h-[88vh] overflow-y-scroll">
         <div className="w-[22rem] border-r border-r-faintGray">
           <Selector />
         </div>

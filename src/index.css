@@ -145,15 +145,7 @@ input[type="number"] {
   @apply border border-gray w-full rounded-md px-2 py-5 text-center text-2xl;
 }
 
-/* Selector */
 
-.selector-container {
-  @apply md:bg-lightSecondary justify-center text-sm flex flex-col md:flex-row items-center  cursor-pointer font-normal rounded-full px-0 py-0 md:px-6 md:py-3;
-}
-
-.selector-icon {
-  @apply block;
-}
 
 /* account */
 .account-card {

@@ -1,0 +1,13 @@
+/* Selector */
+
+.selector-container {
+  @apply md:bg-lightSecondary  flex-nowrap justify-center text-sm flex flex-col md:flex-row items-center  cursor-pointer font-normal rounded-full px-2 py-0 md:px-6 md:py-3;
+}
+
+.selector-icon {
+  @apply block text-primary;
+}
+
+.tab-scroll-none::-webkit-scrollbar {
+  display: none;
+}

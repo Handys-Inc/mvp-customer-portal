@@ -43,7 +43,7 @@ function Provider() {
       </NavLink>
 
       {/* Desktop: provider Image gallery */}
-      <div className="hidden md:flex h-[20rem] gap-x-2 px-5 my-5">
+      <div className="hidden cursor-pointer md:flex h-[20rem] gap-x-2 px-5 my-5">
         <div onClick={() => setOpen(true)} className="flex-1 h-full">
           <img
             className="h-full w-full object-cover rounded-tl-xl rounded-bl-xl"
@@ -52,7 +52,10 @@ function Provider() {
           />
         </div>
 
-        <div className="flex-1 flex  flex-col justify-between">
+        <div
+          onClick={() => setOpen(true)}
+          className="flex-1 flex  flex-col justify-between"
+        >
           <img
             className="h-1/2 w-full object-cover rounded-tr-xl"
             src={two}

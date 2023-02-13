@@ -7,10 +7,13 @@ import { BsTags } from "react-icons/bs";
 import { Popover } from "@headlessui/react";
 import { NavLink } from "react-router-dom";
 
+import "../index.css";
+import Border from "../../../components/Border/Border";
+
 function BookingCard() {
   return (
-    <div>
-      <div className="rounded-xl shadow-none md:shadow-lg border border-faintGray max-w-xl p-5 md:p-10">
+    <div className="max-w-xl">
+      <div className="rounded-xl shadow-none md:shadow-lg border border-faintGray  p-5 md:p-10">
         <div className="flex justify-between">
           <p className="text-gray text-lg">
             <span className="font-bold text-black text-2xl">$65 </span> per hour
@@ -62,16 +65,52 @@ function BookingCard() {
         <div className="text-gray font-semibold my-5">
           <table class="w-full">
             <tbody>
-              <tr>
-                <td className="text-left underline underline-offset-4">
-                  $65 per hour x 3 hours
+              {/* BREAKDOWN */}
+              <tr className="table-row">
+                <td className="table-item">
+                  <Popover className="relative">
+                    <Popover.Button>
+                      <p className="underline underline-offset-4">
+                        {" "}
+                        $65 per hour x 3 hours
+                      </p>
+                    </Popover.Button>
+
+                    <Popover.Panel className="absolute bg-white font-light px-5 min-w-[20rem] py-2 shadow-lg border border-mute rounded-lg z-10">
+                      <h4 className="text-center font-semibold text-lg">
+                        Base price breakdown
+                      </h4>
+                      <Border />
+                      <table class="w-full">
+                        <tbody>
+                          <tr className="table-row">
+                            <td className="">1st hour</td>
+                            <td className="text-right">$55 CAD</td>
+                          </tr>
+                          <tr className="table-row">
+                            <td className="">2nd hour</td>
+                            <td className="text-right">$78 CAD</td>
+                          </tr>
+                          <tr className="table-row">
+                            <td className="">3rd hour</td>
+                            <td className="text-right">$124 CAD</td>
+                          </tr>
+                          <Border />
+                          <tr className="table-row font-semibold">
+                            <td className="">Total</td>
+                            <td className="text-right">$195 CAD</td>
+                          </tr>
+                        </tbody>
+                      </table>{" "}
+                    </Popover.Panel>
+                  </Popover>
                 </td>
                 <td className="text-right">$195 CAD</td>
               </tr>
-              <tr>
-                <td className="text-left underline underline-offset-4">
-                  Service fee
-                  {/* <Popover className="relative">
+              {/* SERVICE FEE */}
+              <tr className="table-row">
+                <td className="table-item">
+                  <Popover className="relative">
                     <Popover.Button>
                       <p className="underline underline-offset-4">
                         Service fee
@@ -84,13 +123,24 @@ function BookingCard() {
                         seamlessly.
                       </p>
                     </Popover.Panel>
-                  </Popover> */}
+                  </Popover>
                 </td>
                 <td className="text-right">$55 CAD</td>
               </tr>
-              <tr>
+              {/* TAXES */}
+              <tr className="table-row">
                 <td className="text-left underline underline-offset-4">
-                  Taxes
+                  <Popover className="relative">
+                    <Popover.Button>
+                      <p className="underline underline-offset-4">Taxes</p>
+                    </Popover.Button>
+
+                    <Popover.Panel className="absolute bg-white px-2 py-2 shadow-lg border border-mute rounded-lg z-10">
+                      <p className="font-light">
+                        Goods and services tax and Harmonized sales tax
+                      </p>
+                    </Popover.Panel>
+                  </Popover>
                 </td>
                 <td className="text-right">$30 CAD</td>
               </tr>

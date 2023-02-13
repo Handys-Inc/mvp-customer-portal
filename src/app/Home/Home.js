@@ -9,6 +9,8 @@ import Modal from "../../components/Modal/Modal";
 import MobileSearch from "../MobileSearch/MobileSearch";
 
 // css
+import './index.css'
+import Border from "../../components/Border/Border";
 
 function Home() {
   // scroll to top
@@ -19,8 +21,8 @@ function Home() {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   return (
-    <div>
       <Layout>
+
         {/* MOBILE SEARCH TOGGLE */}
         <div
           onClick={() => setShowMobileSearch(true)}
@@ -50,10 +52,11 @@ function Home() {
         </Modal>
 
         <Selector />
+       <Border/>
 
         <Services />
       </Layout>
-    </div>
+
   );
 }
 

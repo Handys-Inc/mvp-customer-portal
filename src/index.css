@@ -126,7 +126,7 @@ input[type="number"] {
 }
 
 .form-input {
-  @apply w-full border border-mute rounded-md px-5 py-3;
+  @apply w-full border border-mute rounded-md px-5 py-3 focus:ring-mute;
 }
 
 .form-input-rounded {
@@ -143,16 +143,6 @@ input[type="number"] {
 
 .digit-input {
   @apply border border-gray w-full rounded-md px-2 py-5 text-center text-2xl;
-}
-
-/* Selector */
-
-.selector-container {
-  @apply md:bg-lightSecondary justify-center text-sm flex flex-col md:flex-row items-center  cursor-pointer font-normal rounded-full px-0 py-0 md:px-6 md:py-3;
-}
-
-.selector-icon {
-  @apply block;
 }
 
 /* account */
@@ -199,4 +189,31 @@ input[type="radio"] {
 }
 .message-pill {
   @apply rounded-full bg-faintGray text-xs text-gray py-1 px-4 inline-block;
+}
+
+/* Skeleton loaders */
+.skeleton {
+  opacity: 0.7;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.skeleton-text {
+  width: 100%;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.125rem;
+}
+
+.skeleton-text:last-child {
+  margin-bottom: 0;
+  width: 80%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(0, 0%, 67%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }

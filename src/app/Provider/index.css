@@ -1,0 +1,7 @@
+.table-item {
+  @apply underline pb-3 underline-offset-4 text-left;
+}
+
+/* .table-row {
+  @apply pb-10;
+} */

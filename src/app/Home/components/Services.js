@@ -1,7 +1,17 @@
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
+import ServicesLoader from "../ServicesLoader";
 
 function Services() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // fake api call
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
   const services = [
     {
       id: 1,
@@ -76,16 +86,26 @@ function Services() {
       image: null,
     },
   ];
+
   return (
     <div className="px-0 md:px-5 mb-32">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-        {services.map((service) => {
-          return <ServiceCard id={service.id} service={service} />;
-        })}
-      </div>
-      <div className="text-center my-10">
-        <button className="btn-primary-outline my-5">Load more</button>
-      </div>
+      {loading ? (
+        <Fragment>
+          <ServicesLoader />
+        </Fragment>
+      ) : (
+        <Fragment>
+          {/*  */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+            {services.map((service) => {
+              return <ServiceCard id={service.id} service={service} />;
+            })}
+          </div>
+          <div className="text-center my-10">
+            <button className="btn-primary-outline my-5">Load more</button>
+          </div>
+        </Fragment>
+      )}
     </div>
   );
 }

@@ -134,23 +134,25 @@ function MobileSearch() {
         </div>
         {step === "long" && (
           <div>
-            <p className="text-gray text-sm">Number of hours</p>
+            <p className="text-gray text-sm">Number of hours (max 8)</p>
             <div className="border border-gray rounded-full flex w-1/3 text-center justify-between divide-x divide-gray mt-2">
-              <div
+              <button
+                disabled={counter <= 1}
                 onClick={() => setCounter(counter - 1)}
                 className="cursor-pointer hover:bg-primary hover:rounded-tl-2xl hover:rounded-bl-2xl hover:text-white p-1 mx-auto w-1/3"
               >
                 -
-              </div>
+              </button>
 
               <div className="p-1 mx-auto w-1/3">{counter}</div>
 
-              <div
+              <button
+                disabled={counter >= 8}
                 onClick={() => setCounter(counter + 1)}
                 className=" hover:bg-primary hover:rounded-tr-2xl hover:rounded-br-2xl hover:text-white cursor-pointer p-1 mx-auto w-1/3"
               >
                 +
-              </div>
+              </button>
             </div>
 
             <div className="my-5">

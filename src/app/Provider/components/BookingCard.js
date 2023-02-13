@@ -97,7 +97,7 @@ function BookingCard() {
                           </tr>
                           <Border />
                           <tr className="table-row font-semibold">
-                            <td className="">Total</td>
+                            <td className="">Total base price</td>
                             <td className="text-right">$195 CAD</td>
                           </tr>
                         </tbody>

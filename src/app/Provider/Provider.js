@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 
 import BookingCard from "./components/BookingCard";
@@ -14,6 +14,9 @@ import one from "../../assets/images/prov-1.png";
 import two from "../../assets/images/prov-2.png";
 import three from "../../assets/images/prov-3.png";
 
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -25,20 +28,23 @@ function Provider() {
     window.scrollTo(0, 0);
   }, []);
 
+  // state
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="mb-32">
       <Header />
 
       {/* Back button for mobile */}
       <NavLink to="/">
-        <div className="absolute bg-[#DDDDDDBA] hover:text-white hover:bg-black cursor-pointer rounded-full h-7 w-7 z-50 flex items-center justify-center left-4 top-4">
+        <div className="md:hidden absolute bg-[#DDDDDDBA] hover:text-white hover:bg-black cursor-pointer rounded-full h-7 w-7 z-50 flex items-center justify-center left-4 top-4">
           <IoIosArrowBack size={20} />
         </div>
       </NavLink>
 
       {/* Desktop: provider Image gallery */}
       <div className="hidden md:flex h-[20rem] gap-x-2 px-5 my-5">
-        <div className="flex-1 h-full">
+        <div onClick={() => setOpen(true)} className="flex-1 h-full">
           <img
             className="h-full w-full object-cover rounded-tl-xl rounded-bl-xl"
             src={one}
@@ -59,6 +65,13 @@ function Provider() {
           />
         </div>
       </div>
+
+      {/* desktop light box */}
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={[{ src: one }, { src: two }, { src: three }]}
+      />
 
       {/* Mobile: provider image gallery */}
       <div className="block md:hidden carousel-wrapper mb-4">

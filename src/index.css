@@ -126,7 +126,7 @@ input[type="number"] {
 }
 
 .form-input {
-  @apply w-full border border-mute rounded-md px-5 py-3;
+  @apply w-full border border-mute rounded-md px-5 py-3 focus:ring-mute;
 }
 
 .form-input-rounded {

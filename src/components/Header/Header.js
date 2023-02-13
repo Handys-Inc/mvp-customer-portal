@@ -46,7 +46,7 @@ function Header() {
           </a>
 
           {/* NOTIFICATIONS MODAL */}
-          <div className="relative inline-block text-left">
+          <div className="relative inline-block text-left z-50">
             <div
               onClick={() => setShowNoti(!showNoti)}
               className="flex cursor-pointer items-center justify-center w-10 h-10 rounded-full text-center bg-[#F5F5F5] text-black"

@@ -9,7 +9,7 @@ function Services() {
     // fake api call
     setTimeout(() => {
       setLoading(false);
-    }, 50000);
+    }, 3000);
   }, []);
 
   const services = [
@@ -86,6 +86,7 @@ function Services() {
       image: null,
     },
   ];
+
   return (
     <div className="px-0 md:px-5 mb-32">
       {loading ? (

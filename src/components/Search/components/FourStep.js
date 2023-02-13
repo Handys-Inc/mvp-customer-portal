@@ -193,23 +193,33 @@ function FourStep() {
       {/* LONG */}
       {showLong && step === "how" && (
         <div className="w-96 absolute right-0 inline-block bg-white shadow-xl p-4 mt-2 rounded-2xl border border-faintGray">
-          <p className="text-gray text-sm">Number of hours</p>
-          <div className="border border-gray rounded-full flex w-1/3 text-center justify-between divide-x divide-gray mt-2">
-            <div
-              onClick={() => setCounter(counter - 1)}
-              className="cursor-pointer hover:bg-primary hover:rounded-tl-2xl hover:rounded-bl-2xl hover:text-white p-1 mx-auto w-1/3"
-            >
-              -
-            </div>
+          <p className="text-gray text-sm">Number of hours (Max: 8 hours)</p>
+          <div className="flex gap-10">
+            <div className="border border-gray rounded-full flex w-1/3 text-center justify-between divide-x divide-gray mt-2">
+              <button
+                disabled={counter <= 1}
+                onClick={() => setCounter(counter - 1)}
+                className="cursor-pointer hover:bg-primary hover:rounded-tl-2xl hover:rounded-bl-2xl hover:text-white p-1 mx-auto w-1/3"
+              >
+                -
+              </button>
 
-            <div className="p-1 mx-auto w-1/3">{counter}</div>
+              <div className="p-1 mx-auto w-1/3">{counter}</div>
 
-            <div
-              onClick={() => setCounter(counter + 1)}
-              className=" hover:bg-primary hover:rounded-tr-2xl hover:rounded-br-2xl hover:text-white cursor-pointer p-1 mx-auto w-1/3"
-            >
-              +
+              <button
+                disabled={counter >= 8}
+                onClick={() => setCounter(counter + 1)}
+                className=" hover:bg-primary hover:rounded-tr-2xl hover:rounded-br-2xl hover:text-white cursor-pointer p-1 mx-auto w-1/3"
+              >
+                +
+              </button>
             </div>
+            {/* <span
+              style={{ fontSize: "0.4rem" }}
+              className="ml-4 text-sm bg-primary bg-opacity-20 text-gray rounded-full p-1"
+            >
+              Can't add more than 8 hours
+            </span> */}
           </div>
 
           <div className="my-5">

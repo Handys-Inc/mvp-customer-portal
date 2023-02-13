@@ -10,7 +10,7 @@ import Layout from "../../../components/Layout/Layout";
 function Interac() {
   const [email, setEmail] = useState(null);
   return (
-    <Layout showBottomNav={false}>
+    <Layout showHeader={false} showBottomNav={false}>
       <PayHeader />
 
       <div className="w-full md:max-w-xl mx-auto mt-5">

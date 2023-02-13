@@ -26,7 +26,7 @@ function Paypal() {
   const [verifyModal, setVerifyModal] = useState(false);
 
   return (
-    <Layout showBottomNav={false}>
+    <Layout showHeader={false} showBottomNav={false}>
       <PayHeader />
 
       <div className="max-w-xl mx-auto mt-5">

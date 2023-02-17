@@ -87,7 +87,7 @@ function Account() {
       </div>
 
       {/* mobile account */}
-      <div className="flex flex-col justify-between h-[85vh]  w-full items-end md:hidden">
+      <div className="flex flex-col justify-between h-[75vh] w-full items-end md:hidden">
         <div className="mt-10 w-full">
           <p className="text-left font-bold text-2xl">Profile</p>
         </div>

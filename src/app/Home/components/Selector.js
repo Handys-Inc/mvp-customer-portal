@@ -11,7 +11,7 @@ function Selector() {
   const selectors = [
     {
       name: "Painter",
-      icon:  <Roller  size={18} className="selector-icon" />
+      icon: <Roller size={18} className="selector-icon" />,
     },
     {
       name: "Plumber",
@@ -19,7 +19,7 @@ function Selector() {
     },
     {
       name: "Electrician",
-      icon: <Bulb  size={18} className="selector-icon" />,
+      icon: <Bulb size={18} className="selector-icon" />,
     },
     {
       name: "Cleaner",
@@ -31,10 +31,10 @@ function Selector() {
     },
   ];
 
-    const mobileSelectors = [
+  const mobileSelectors = [
     {
       name: "Painter",
-      icon:  <Roller fill="#CE1449" size={18} className="selector-icon" />
+      icon: <Roller fill="#CE1449" size={18} className="selector-icon" />,
     },
     {
       name: "Plumber",
@@ -54,39 +54,37 @@ function Selector() {
     },
   ];
   return (
-<Fragment>
-  {/* desktop selectors */}
-<div className="hidden md:flex tab-scroll-none md:justify-center  overflow-x-auto space-x-5 flex-nowrap mt-4 my-2">
-      {selectors.map((selector) => {
-        return (
-          <div className="selector-container">
-            {selector.icon}
+    <Fragment>
+      {/* desktop selectors */}
+      <div className="hidden md:flex tab-scroll-none md:justify-center overflow-x-auto space-x-5 flex-nowrap mt-4 my-2">
+        {selectors.map((selector) => {
+          return (
+            <div className="selector-container">
+              {selector.icon}
 
-            <p className="whitespace-nowrap ml-0 mt-2 md:mt-0 md:ml-2 ">
-              {selector.name}
-            </p>
-          </div>
-        );
-      })}
-    </div>
+              <p className="whitespace-nowrap ml-0 mt-2 md:mt-0 md:ml-2 ">
+                {selector.name}
+              </p>
+            </div>
+          );
+        })}
+      </div>
 
-    {/* mobile selectors */}
-    <div className="md:hidden flex tab-scroll-none md:justify-center  overflow-x-auto space-x-5 flex-nowrap mt-4 my-2">
-      {mobileSelectors.map((selector) => {
-        return (
-          <div className="selector-container">
-            {selector.icon}
+      {/* mobile selectors */}
+      <div className="md:hidden flex tab-scroll-none md:justify-center  overflow-x-auto space-x-5 flex-nowrap mt-4 my-2">
+        {mobileSelectors.map((selector) => {
+          return (
+            <div className="selector-container">
+              {selector.icon}
 
-            <p className="whitespace-nowrap ml-0 mt-2 md:mt-0 md:ml-2 ">
-              {selector.name}
-            </p>
-          </div>
-        );
-      })}
-    </div>
-</Fragment>
-    
-    
+              <p className="whitespace-nowrap ml-0 mt-2 md:mt-0 md:ml-2 ">
+                {selector.name}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </Fragment>
   );
 }
 

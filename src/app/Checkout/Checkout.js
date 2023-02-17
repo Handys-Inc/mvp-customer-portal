@@ -17,7 +17,7 @@ function Checkout() {
 
   return (
     <Layout showBottomNav={false}>
-      <div className="flex flex-col md:flex-row justify-between gap-5 md:gap-10 mx-0 md:mx-16 my-8">
+      <div className="flex mb-10 flex-col md:flex-row justify-between gap-5 md:gap-10 mx-0 md:mx-16 my-8">
         <div className="flex-1">
           {/* Header */}
           <div className="flex gap-5 mb-10 items-center">

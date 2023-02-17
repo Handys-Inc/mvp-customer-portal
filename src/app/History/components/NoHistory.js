@@ -1,6 +1,7 @@
 import React from "react";
 
 import cleaner from "../../../assets/images/cleaner.png";
+import { NavLink } from "react-router-dom";
 
 function NoHistory() {
   return (
@@ -12,7 +13,10 @@ function NoHistory() {
         <p className="mb-5 font-light w-full md:w-72 text-sm md:text-lg">
           Need task done? Connect to the right handyperson
         </p>
-        <button className="btn-primary">Start searching</button>
+        <NavLink to="/">
+ <button className="btn-primary">Start searching</button>
+        </NavLink>
+       
       </div>
       <div className="hidden md:block md:flex-1">
         <img

@@ -43,13 +43,17 @@ function Price() {
                           <td className="">3rd hour</td>
                           <td className="text-right">$124 CAD</td>
                         </tr>
-                        <Border />
+                      </tbody>
+                    </table>
+                    <Border />
+                    <table className="w-full">
+                      <tbody>
                         <tr className="table-row font-semibold">
                           <td className="">Total base price</td>
                           <td className="text-right">$195 CAD</td>
                         </tr>
                       </tbody>
-                    </table>{" "}
+                    </table>
                   </Popover.Panel>
                 </Popover>
               </td>

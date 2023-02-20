@@ -1,0 +1,21 @@
+/* Bookings */
+.booking-selector {
+  @apply rounded-full text-gray bg-lightGray text-base px-4 py-2 font-normal flex-shrink-0 cursor-pointer;
+}
+
+.booking-selector-active {
+  @apply rounded-full bg-primary text-primary bg-opacity-20 text-base px-4 py-2 font-normal flex-shrink-0 cursor-pointer;
+}
+
+/* RESOURCES */
+.resource-card {
+  @apply rounded-3xl  h-[21rem]  cursor-pointer;
+}
+
+.resource-card img {
+  @apply h-[15rem] w-full object-cover rounded-tr-3xl rounded-tl-3xl;
+}
+
+.booking-scroll-none::-webkit-scrollbar {
+  display: none;
+}

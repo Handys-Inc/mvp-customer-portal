@@ -16,9 +16,9 @@ function Confirm({ coupon, setCoupon }) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      setStatus("error");
+      setStatus("success");
     }, 5000);
-  }, []);
+  }, [show]);
 
   return (
     <Fragment>

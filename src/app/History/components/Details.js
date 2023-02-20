@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 import Border from "../../../components/Border/Border";
 
-function Details({ setDetailsModal, setReportModal }) {
+function Details({ setDetailsModal, setReportModal, setReceiptModal }) {
   return (
     <div>
       <div className="flex justify-between px-10">
@@ -42,6 +42,15 @@ function Details({ setDetailsModal, setReportModal }) {
         <h4 className="mb-1">Payment Info</h4>
         <h6 className="mb-3">Total cost</h6>
         <p className="text-gray text-sm font-light">$250 CAD</p>
+        <p
+          onClick={() => {
+            setDetailsModal(false);
+            setReceiptModal(true);
+          }}
+          className="under text-sm my-3"
+        >
+          View receipt
+        </p>
       </div>
       <Border />
       <div className="px-10 text-left">

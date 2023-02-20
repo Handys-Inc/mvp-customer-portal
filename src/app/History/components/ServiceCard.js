@@ -4,13 +4,16 @@ import Modal from "../../../components/Modal/Modal";
 
 import Details from "./Details";
 import Report from "./Report";
+import Receipt from '../Receipt/Receipt'
 
 import prov from "../../../assets/images/prov-1.png";
 
-function ServiceCard({ service }) {
+function ServiceCard({ service, type }) {
   const [detailsModal, setDetailsModal] = useState(false);
 
   const [reportModal, setReportModal] = useState(false);
+
+  const [receiptModal, setReceiptModal] = useState(false);
 
   return (
     <div>
@@ -46,6 +49,7 @@ function ServiceCard({ service }) {
         <Details
           setDetailsModal={setDetailsModal}
           setReportModal={setReportModal}
+          setReceiptModal={setReceiptModal}
         />
       </Modal>
 
@@ -54,6 +58,14 @@ function ServiceCard({ service }) {
         <Report
           setDetailsModal={setDetailsModal}
           setReportModal={setReportModal}
+        />
+      </Modal>
+
+      {/* Receipt Modal */}
+      <Modal title="" isOpen={receiptModal} setIsOpen={setReceiptModal}>
+        <Receipt
+          setReciptModal={setReceiptModal}
+     
         />
       </Modal>
     </div>

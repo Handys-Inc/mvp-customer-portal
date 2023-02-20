@@ -28,6 +28,8 @@ import MobileHelp from "./app/Help/MobileHelp";
 import MobileAccount from "./app/Account/MobileAccount";
 
 function App() {
+
+  // TODO: Use hash to go back for multi step like tradingview
   return (
     <BrowserRouter>
       <Routes>

@@ -8,6 +8,7 @@ import CheckCard from "./components/CheckCard";
 // icons
 import { MdArrowBack } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import Confirm from "./Confirm/Confirm";
 
 function Checkout() {
   // scroll to top
@@ -38,7 +39,7 @@ function Checkout() {
         {/* Checkout Summary */}
         <div className="flex-1">
           <CheckCard coupon={coupon} setCoupon={setCoupon} />
-          <button className="btn-primary w-full">Confirm Booking</button>
+         <Confirm/>
         </div>
       </div>
     </Layout>

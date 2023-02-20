@@ -230,3 +230,8 @@ input[type="radio"] {
   opacity: 1;
   background-color: #ce1449;
 }
+
+/* undelrine with hover effect */
+.under {
+  @apply underline underline-offset-4 cursor-pointer hover:text-primary;
+}

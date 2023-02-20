@@ -4,11 +4,11 @@ import Like from "../../../assets/icons/svg/Like";
 
 import { BsTags } from "react-icons/bs";
 
-import { Popover } from "@headlessui/react";
+
 import { NavLink } from "react-router-dom";
 
 import "../index.css";
-import Border from "../../../components/Border/Border";
+
 import Price from "../Price/Price";
 
 function BookingCard() {
@@ -25,10 +25,11 @@ function BookingCard() {
         </div>
 
         {/* DATE AND NUMBER OF HOURS */}
-        <div className="text-gray font-light border rounded-3xl border-mute py-3 my-5">
-          <div className="px-7 py-2">
+        <div className="text-gray font-light border rounded-3xl border-mute py-1 md:py-3 my-5">
+          <div className="px-7 py-1 md:py-2">
             <p className=" font-bold text-gray">Date</p>
             <input
+              value={new Date()}
               className="w-full border-transparent focus:border-transparent focus:ring-0 appearance-none mt-2 focus:outline-none outline-none"
               type="date"
             />
@@ -36,7 +37,7 @@ function BookingCard() {
           <div className="text-faintGray">
             <hr />
           </div>
-          <div className="px-7 py-2">
+          <div className="px-7 py-1 md:py-2">
             <p className=" font-bold text-gray">Number of hours</p>
             <select className="w-full appearance-none border-transparent focus:border-transparent focus:ring-0 focus:outline-none outline-none border-none mt-2">
               <option>1 hour</option>

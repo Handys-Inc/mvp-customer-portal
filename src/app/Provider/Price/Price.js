@@ -6,7 +6,7 @@ import Border from "../../../components/Border/Border";
 
 import "../index.css";
 
-function Price() {
+function Price({ coupon }) {
   return (
     <div>
       {" "}
@@ -43,13 +43,17 @@ function Price() {
                           <td className="">3rd hour</td>
                           <td className="text-right">$124 CAD</td>
                         </tr>
-                        <Border />
+                      </tbody>
+                    </table>
+                    <Border />
+                    <table className="w-full">
+                      <tbody>
                         <tr className="table-row font-semibold">
                           <td className="">Total base price</td>
                           <td className="text-right">$195 CAD</td>
                         </tr>
                       </tbody>
-                    </table>{" "}
+                    </table>
                   </Popover.Panel>
                 </Popover>
               </td>
@@ -72,6 +76,27 @@ function Price() {
               </td>
               <td className="text-right">$55 CAD</td>
             </tr>
+
+            {/* Coupon */}
+            {coupon && (
+              <tr className="table-row">
+                <td className="text-left underline underline-offset-4">
+                  <Popover className="relative">
+                    <Popover.Button>
+                      <p className="underline underline-offset-4">Coupon</p>
+                    </Popover.Button>
+
+                    <Popover.Panel className="absolute bg-white px-2 py-2 shadow-lg border border-mute rounded-lg z-10">
+                      <p className="font-light">
+                        Discount you get with this coupon code
+                      </p>
+                    </Popover.Panel>
+                  </Popover>
+                </td>
+                <td className="text-right text-primary">-$30 CAD (-10%)</td>
+              </tr>
+            )}
+
             {/* TAXES */}
             <tr className="table-row">
               <td className="text-left underline underline-offset-4">

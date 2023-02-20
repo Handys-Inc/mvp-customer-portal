@@ -1,16 +1,12 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import ServiceCard from "./ServiceCard";
 import ServicesLoader from "../ServicesLoader";
 
-function Services() {
-  const [loading, setLoading] = useState(true);
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
-  useEffect(() => {
-    // fake api call
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
+function Services({ loading }) {
+  // animation
+  const [parent] = useAutoAnimate();
 
   const services = [
     {
@@ -96,7 +92,7 @@ function Services() {
       ) : (
         <Fragment>
           {/*  */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div ref={parent} className="grid grid-cols-1 md:grid-cols-4 gap-10">
             {services.map((service) => {
               return <ServiceCard id={service.id} service={service} />;
             })}

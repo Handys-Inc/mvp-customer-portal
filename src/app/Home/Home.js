@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Selector from "./components/Selector";
 import Services from "./components/Services";
 import Layout from "../../components/Layout/Layout";
@@ -9,7 +9,7 @@ import Modal from "../../components/Modal/Modal";
 import MobileSearch from "../MobileSearch/MobileSearch";
 
 // css
-import './index.css'
+import "./index.css";
 import Border from "../../components/Border/Border";
 
 function Home() {
@@ -20,43 +20,53 @@ function Home() {
 
   const [showMobileSearch, setShowMobileSearch] = useState(false);
 
-  return (
-      <Layout>
+  const [selected, setSelected] = useState(null);
 
-        {/* MOBILE SEARCH TOGGLE */}
-        <div
-          onClick={() => setShowMobileSearch(true)}
-          className="md:hidden mt-10 items-center justify-between  flex border-faintGray border shadow-md rounded-full py-2 px-4"
-        >
-          <div className="flex gap-4 items-center">
-            {" "}
-            <FiSearch className="text-gray" size={20} />
-            <div>
-              <p className="font-semibold text-sm">What's needed?</p>
-              <p className="text-gray text-xs">Where . When . How Long</p>
-            </div>
-          </div>
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // fake api call
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, [selected]);
+
+  return (
+    <Layout>
+      {/* MOBILE SEARCH TOGGLE */}
+      <div
+        onClick={() => setShowMobileSearch(true)}
+        className="md:hidden mt-10 items-center justify-between  flex border-faintGray border shadow-md rounded-full py-2 px-4"
+      >
+        <div className="flex gap-4 items-center">
+          {" "}
+          <FiSearch className="text-gray" size={20} />
           <div>
-            <BsSliders />
+            <p className="font-semibold text-sm">What's needed?</p>
+            <p className="text-gray text-xs">Where . When . How Long</p>
           </div>
         </div>
+        <div>
+          <BsSliders />
+        </div>
+      </div>
 
-        {/* MODAL FOR Mobile Search */}
-        <Modal
-          full={true}
-          isOpen={showMobileSearch}
-          setIsOpen={setShowMobileSearch}
-          title="Search"
-        >
-          <MobileSearch />
-        </Modal>
+      {/* MODAL FOR Mobile Search */}
+      <Modal
+        full={true}
+        isOpen={showMobileSearch}
+        setIsOpen={setShowMobileSearch}
+        title="Search"
+      >
+        <MobileSearch />
+      </Modal>
 
-        <Selector />
-       <Border/>
+      <Selector setSelected={setSelected} selected={selected} />
+      <Border />
 
-        <Services />
-      </Layout>
-
+      <Services loading={loading} setLoading={setLoading} />
+    </Layout>
   );
 }
 

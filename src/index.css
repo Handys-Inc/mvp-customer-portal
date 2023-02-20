@@ -42,10 +42,14 @@
 /* RESETS */
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
   accent-color: #ce1449;
+  height: 100%;
+  overflow: auto;
 }
 
 /* remove outline from all inputs  */
@@ -216,4 +220,18 @@ input[type="radio"] {
   100% {
     background-color: hsl(200, 20%, 95%);
   }
+}
+
+/* date modal resets */
+.rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
+  color: white;
+  opacity: 1;
+  background-color: #ce1449;
+}
+
+/* undelrine with hover effect */
+.under {
+  @apply underline underline-offset-4 cursor-pointer hover:text-primary;
 }

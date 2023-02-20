@@ -32,7 +32,7 @@ function Provider() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="mb-32">
+    <div className="mb-32 relative">
       <Header />
 
       {/* Back button for mobile */}

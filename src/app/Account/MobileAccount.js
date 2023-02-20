@@ -17,9 +17,13 @@ import money from "../../assets/icons/money-bill.svg";
 import pro from "../../assets/images/pro.png";
 
 function MobileAccount() {
+    // scroll to top
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Layout current="account">
-      <div className="flex flex-col justify-between h-[85vh]  w-full items-end md:hidden">
+      <div className="flex flex-col justify-between h-[70vh]  w-full items-end md:hidden">
         <div className="mt-10 w-full">
           <p className="text-left font-bold text-lg mb-5">
             {" "}

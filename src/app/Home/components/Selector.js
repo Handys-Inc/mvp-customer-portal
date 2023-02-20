@@ -7,34 +7,63 @@ import Wrench from "../../../assets/icons/svg/Wrench";
 import Worker from "../../../assets/icons/svg/Worker";
 import Roller from "../../../assets/icons/svg/Roller";
 
-function Selector() {
+// react icons
+import { MdOutlineImagesearchRoller, MdOutlineHandyman } from "react-icons/md";
+import { BiWrench } from "react-icons/bi";
+import { IoBulbOutline } from "react-icons/io5";
+import { GiBroom } from "react-icons/gi";
+
+function Selector({ selected, setSelected }) {
+  // const selectors = [
+  //   {
+  //     name: "Painter",
+  //     icon: <Roller size={18} className="selector-icon" />,
+  //   },
+  //   {
+  //     name: "Plumber",
+  //     icon: <Wrench size={18} className="selector-icon" />,
+  //   },
+  //   {
+  //     name: "Electrician",
+  //     icon: <Bulb size={18} className="selector-icon" />,
+  //   },
+  //   {
+  //     name: "Cleaner",
+  //     icon: <Broom size={18} className="selector-icon" />,
+  //   },
+  //   {
+  //     name: "General handy person",
+  //     icon: <Worker size={18} className="selector-icon" />,
+  //   },
+  // ];
+
   const selectors = [
     {
       name: "Painter",
-      icon:  <Roller  size={18} className="selector-icon" />
+      icon: <MdOutlineImagesearchRoller size={18} />,
     },
     {
       name: "Plumber",
-      icon: <Wrench size={18} className="selector-icon" />,
+      icon: <BiWrench size={18} />,
     },
     {
       name: "Electrician",
-      icon: <Bulb  size={18} className="selector-icon" />,
+      icon: <IoBulbOutline size={18} />,
     },
     {
       name: "Cleaner",
-      icon: <Broom size={18} className="selector-icon" />,
+      icon: <GiBroom size={17} />,
     },
     {
       name: "General handy person",
-      icon: <Worker size={18} className="selector-icon" />,
+      icon: <MdOutlineHandyman size={18} />,
     },
   ];
 
-    const mobileSelectors = [
+  const mobileSelectors = [
     {
       name: "Painter",
-      icon:  <Roller fill="#CE1449" size={18} className="selector-icon" />
+      icon: <Roller fill="#CE1449" size={18} className="selector-icon" />,
     },
     {
       name: "Plumber",
@@ -53,40 +82,46 @@ function Selector() {
       icon: <Worker fill="#CE1449" size={18} className="selector-icon" />,
     },
   ];
+
   return (
-<Fragment>
-  {/* desktop selectors */}
-<div className="hidden md:flex tab-scroll-none md:justify-center  overflow-x-auto space-x-5 flex-nowrap mt-4 my-2">
-      {selectors.map((selector) => {
-        return (
-          <div className="selector-container">
-            {selector.icon}
+    <Fragment>
+      {/* desktop selectors */}
+      <div className="hidden md:flex tab-scroll-none md:justify-center overflow-x-auto space-x-5 flex-nowrap mt-4 my-2">
+        {selectors.map((selector) => {
+          return (
+            <div
+              onClick={() => setSelected(selector.name.toLowerCase())}
+              className={`${
+                selected === selector.name.toLowerCase()
+                  ? "selector-container-selected"
+                  : "selector-container"
+              } `}
+            >
+              {selector.icon}
 
-            <p className="whitespace-nowrap ml-0 mt-2 md:mt-0 md:ml-2 ">
-              {selector.name}
-            </p>
-          </div>
-        );
-      })}
-    </div>
+              <p className="whitespace-nowrap ml-0 mt-2 md:mt-0 md:ml-2 ">
+                {selector.name}
+              </p>
+            </div>
+          );
+        })}
+      </div>
 
-    {/* mobile selectors */}
-    <div className="md:hidden flex tab-scroll-none md:justify-center  overflow-x-auto space-x-5 flex-nowrap mt-4 my-2">
-      {mobileSelectors.map((selector) => {
-        return (
-          <div className="selector-container">
-            {selector.icon}
+      {/* mobile selectors */}
+      <div className="md:hidden flex tab-scroll-none md:justify-center  overflow-x-auto space-x-5 flex-nowrap mt-4 my-2">
+        {mobileSelectors.map((selector) => {
+          return (
+            <div className="selector-container">
+              {selector.icon}
 
-            <p className="whitespace-nowrap ml-0 mt-2 md:mt-0 md:ml-2 ">
-              {selector.name}
-            </p>
-          </div>
-        );
-      })}
-    </div>
-</Fragment>
-    
-    
+              <p className="whitespace-nowrap ml-0 mt-2 md:mt-0 md:ml-2 ">
+                {selector.name}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </Fragment>
   );
 }
 

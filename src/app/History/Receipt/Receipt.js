@@ -20,7 +20,7 @@ function Receipt() {
           </div>
         </div>
 
-        <h4 className="text-4xl text-left text-primary font-extrabold px-10">
+        <h4 className="text-2xl md:text-4xl text-left text-primary font-extrabold px-10">
           Thanks for using Handys, <br />
           Username
         </h4>
@@ -28,7 +28,7 @@ function Receipt() {
       {/* Details */}
       <div className="px-10 my-5">
         {/* total */}
-        <table class="w-full text-2xl font-bold mt-2">
+        <table class="w-full text-lg md:text-2xl font-bold mt-2">
           <tbody>
             <tr>
               <td className="text-left">Total</td>
@@ -40,7 +40,7 @@ function Receipt() {
         <Border />
 
         {/* Actual details */}
-        <table class="w-full">
+        <table class="w-full text-sm md:text-base">
           <tbody>
             <tr>
               <td className="text-left">$65 per hour x 3 hours</td>

@@ -1,21 +1,12 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import ServiceCard from "./ServiceCard";
 import ServicesLoader from "../ServicesLoader";
 
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
-function Services() {
-  const [loading, setLoading] = useState(true);
-
+function Services({ loading }) {
   // animation
   const [parent] = useAutoAnimate();
-
-  useEffect(() => {
-    // fake api call
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
 
   const services = [
     {

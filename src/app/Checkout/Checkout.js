@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Layout from "../../components/Layout/Layout";
 
@@ -15,6 +15,9 @@ function Checkout() {
     window.scrollTo(0, 0);
   }, []);
 
+  // coupon
+  const [coupon, setCoupon] = useState(null);
+
   return (
     <Layout showBottomNav={false}>
       <div className="flex mb-10 flex-col md:flex-row justify-between gap-5 md:gap-10 mx-0 md:mx-16 my-8">
@@ -29,12 +32,12 @@ function Checkout() {
             </h3>
           </div>
 
-          <CheckInfo />
+          <CheckInfo coupon={coupon} setCoupon={setCoupon} />
         </div>
 
         {/* Checkout Summary */}
         <div className="flex-1">
-          <CheckCard />
+          <CheckCard coupon={coupon} setCoupon={setCoupon} />
           <button className="btn-primary w-full">Confirm Booking</button>
         </div>
       </div>

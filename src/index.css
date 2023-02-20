@@ -221,3 +221,12 @@ input[type="radio"] {
     background-color: hsl(200, 20%, 95%);
   }
 }
+
+/* date modal resets */
+.rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
+  color: white;
+  opacity: 1;
+  background-color: #ce1449;
+}

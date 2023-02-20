@@ -5,7 +5,7 @@ import prov from "../../../assets/images/provider-large.png";
 import Like from "../../../assets/icons/svg/Like";
 import Price from "../../Provider/Price/Price";
 
-function CheckCard() {
+function CheckCard({coupon}) {
   return (
     <div className="general-card mb-5">
       {/* Provider Information */}
@@ -40,7 +40,7 @@ function CheckCard() {
       </div>
       <h3 className="text-lg font-medium my-4">Price Details</h3>
 
-      <Price />
+      <Price coupon={coupon} />
     </div>
   );
 }

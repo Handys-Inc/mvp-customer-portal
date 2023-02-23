@@ -28,7 +28,12 @@ function ProviderDetails() {
         </div>
       </div>
       <p className="text-gray text-base md:text-lg font-light -mt-3">
-        2-4 years experience
+        2-4 years experience |{" "}
+        <NavLink to="/provider/profile">
+          <span className="hover:text-primary cursor-pointer">
+            View Profile
+          </span>
+        </NavLink>
       </p>
 
       {/* BREAK */}

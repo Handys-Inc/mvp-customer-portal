@@ -27,7 +27,7 @@ function ProviderDetails() {
           <img className="w-10 md:w-14" src={profile} alt="provider" />
         </div>
       </div>
-      <p className="text-gray text-base md:text-lg font-light -mt-3">
+      <p className="text-gray text-base  font-light -mt-3">
         2-4 years experience |{" "}
         <NavLink to="/provider/profile">
           <span className="hover:text-primary cursor-pointer">

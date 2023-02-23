@@ -21,12 +21,14 @@ function ProviderProfile() {
   return (
     <Layout>
       <div className="mt-20 flex items-center justify-between mb-5 max-w-5xl mx-auto">
-        <NavLink to="/account">
+        <NavLink to="/book/provider">
           <p className="text-sm underline">Back</p>
         </NavLink>
 
         <div>
-          <button className="btn-primary">Book handyperson</button>
+          <NavLink to="/book/provider">
+            <button className="btn-primary">Book handyperson</button>
+          </NavLink>
         </div>
       </div>
       <div className="flex gap-10 max-w-5xl mx-auto mb-32">

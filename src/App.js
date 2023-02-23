@@ -26,9 +26,9 @@ import Messages from "./app/Messages/Messages";
 import MobileNotifications from "./app/Notifications/mobile/MobileNotifications";
 import MobileHelp from "./app/Help/MobileHelp";
 import MobileAccount from "./app/Account/MobileAccount";
+import ProviderProfile from "./app/Provider/Profile/ProviderProfile";
 
 function App() {
-
   // TODO: Use hash to go back for multi step like tradingview
   return (
     <BrowserRouter>
@@ -36,6 +36,8 @@ function App() {
         {/*General Routes */}
         <Route path="/" exact element={<Home />} />
         <Route path="/book/provider" exact element={<Provider />} />
+
+        <Route path="/provider/profile" exact element={<ProviderProfile />} />
 
         {/* Checkout */}
         <Route path="/checkout" exact element={<Checkout />} />

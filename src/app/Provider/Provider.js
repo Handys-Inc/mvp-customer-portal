@@ -107,6 +107,7 @@ function Provider() {
           </div>
         </Carousel>
       </div>
+
       <div className="flex gap-5 md:gap-20 flex-col md:flex-row justify-between px-5 my-5">
         {/* Details */}
         <div className="flex-1">

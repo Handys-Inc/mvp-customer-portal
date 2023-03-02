@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import pro from "../../../assets/images/pro.png";
 
@@ -24,10 +24,20 @@ function FourStep() {
   // counter
 
   // date
-  const [selected, setSelected] = useState(new Date());
+  const [selected, setSelected] = useState({ from: new Date(), to: new Date() });
+
+  console.log("selected", selected)
 
   // number of hours
   const [counter, setCounter] = useState(1);
+
+
+  // selected should never be undefined
+  // useEffect(() => {
+
+  //   // make sure it isn't undefinied
+
+  // }, [selected])
 
   return (
     <div className="max-w-4xl relative mx-auto">
@@ -74,7 +84,7 @@ function FourStep() {
                 setShowDate(true);
               }}
               className="step-input"
-              // value={format(selected, "PP")}
+              value={format(selected.from, "PP")}
               placeholder="Add Date"
               type="text"
             />
@@ -186,7 +196,10 @@ function FourStep() {
             <Datepicker selected={selected} setSelected={setSelected} />
           </div>
           {/* button */}
-          <button className="w-full btn-primary">Set date</button>
+          <button onClick={() => {
+            // 
+            setShowDate(false)
+          }} className="w-full btn-primary">Set date</button>
         </div>
       )}
 

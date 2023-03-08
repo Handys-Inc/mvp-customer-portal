@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 
 import logo from "../../assets/logo/logo.svg";
-
 import Search from "../Search/Search";
 
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-
 import { NavLink } from "react-router-dom";
-
 import { HiMenu } from "react-icons/hi";
-
-import Profile from "../../assets/images/profile.png";
 
 import Bell from "../../assets/icons/svg/Bell";
 
 import Notifications from "../../app/Notifications/Notifications";
+import Avatar from "../Avatar/Avatar";
 
 function Header() {
   const [showNoti, setShowNoti] = useState(false);
@@ -121,7 +117,7 @@ function Header() {
             </Menu>
           </div>
 
-          <img className="w-10" src={Profile} alt="user" />
+          <Avatar />
         </div>
       </div>
       <div className="text-faintGray">

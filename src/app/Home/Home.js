@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+
+// components
 import Selector from "./components/Selector";
 import Services from "./components/Services";
 import Layout from "../../components/Layout/Layout";
@@ -7,16 +9,23 @@ import { FiSearch } from "react-icons/fi";
 import { BsSliders } from "react-icons/bs";
 import Modal from "../../components/Modal/Modal";
 import MobileSearch from "../MobileSearch/MobileSearch";
+import Border from "../../components/Border/Border";
+
+
+
 
 // css
 import "./index.css";
-import Border from "../../components/Border/Border";
+
+
 
 function Home() {
   // scroll to top
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+
 
   const [showMobileSearch, setShowMobileSearch] = useState(false);
 

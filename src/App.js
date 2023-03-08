@@ -28,103 +28,60 @@ import MobileHelp from "./app/Help/MobileHelp";
 import MobileAccount from "./app/Account/MobileAccount";
 import ProviderProfile from "./app/Provider/Profile/ProviderProfile";
 
+// contexts
+import { CookiesProvider } from "react-cookie";
+import AuthContextProvider from "./contexts/AuthContext";
+
 function App() {
-  // TODO: Use hash to go back for multi step like tradingview
-
-  // React.useEffect(() => {
-  //   var PERMITTED_DOMAINS = [
-  //     `${process.env.REACT_APP_MAIN}`,
-  //     `${process.env.REACT_APP_CUSTOMER}`,
-  //     `${process.env.REACT_APP_PROVIDER}`,
-  //   ];
-
-  //   window.addEventListener("message", function (event) {
-  //     if (PERMITTED_DOMAINS.includes(event.origin)) {
-  //       //var msg = JSON.parse(event.data);
-  //       // var msgKey = Object.keys(msg)[0];
-
-  //       console.log("event", event)
-  //       var type = event.data.type;
-  //       var body = event.data.body;
-
-  //       if (type === "shakehand" && body) {
-  //         localStorage.setItem("us3r", JSON.stringify(event.data));
-  //         console.log("received in 3001", event.data);
-  //       }
-  //       // if (event.data) {
-  //       //   localStorage.setItem("us3r", JSON.stringify(event.data));
-  //       //   console.log("received in 3001", event);
-  //       // }
-  //     } else {
-  //       console.log("not part of the permitted domain");
-  //     }
-  //   });
-  // }, []);
-
-  // React.useEffect(() => {
-  //   console.log("runing here");
-  //   window.addEventListener("message", function (event) {
-  //     if (event.origin !== "http://localhost:3000") return; // Only accept messages from localhost:3000
-
-  //     console.log("receiging message", event.data.data); // Prints "Hello from localhost:3000!"
-  //     localStorage.setItem("myData", event.data.data);
-  //   });
-  // }, []);
-
-  React.useEffect(() => {
-    console.log("runing use effec")
-    window.addEventListener("message", (event) => {
-      console.log("origin", event)
-      if (event.origin !== "http://localhost:3000") {
-        // Ignore messages from other origins
-        return;
-      }
-
-      const messageData = event.data;
-      // Handle the message data here
-      console.log("receiving message", event, messageData)
-    });
-  }, []);
-
   return (
     <BrowserRouter>
-      <Routes>
-        {/*General Routes */}
-        <Route path="/" exact element={<Home />} />
-        <Route path="/book/provider" exact element={<Provider />} />
+      <CookiesProvider>
+          <AuthContextProvider>
 
-        <Route path="/provider/profile" exact element={<ProviderProfile />} />
+         
+        <Routes>
+          {/*General Routes */}
+          <Route path="/" exact element={<Home />} />
+          <Route path="/book/provider" exact element={<Provider />} />
 
-        {/* Checkout */}
-        <Route path="/checkout" exact element={<Checkout />} />
+          <Route path="/provider/profile" exact element={<ProviderProfile />} />
 
-        {/* Account */}
-        <Route path="/account" exact element={<Account />} />
-        <Route path="/account/profile" exact element={<Profile />} />
-        <Route path="/account/personal" exact element={<PersonalInfo />} />
-        <Route path="/account/security" exact element={<Security />} />
-        <Route path="/account/payments" exact element={<Payments />} />
+          {/* Checkout */}
+          <Route path="/checkout" exact element={<Checkout />} />
 
-        <Route path="/service-history" exact element={<History />} />
+          {/* Account */}
+          <Route path="/account" exact element={<Account />} />
+          <Route path="/account/profile" exact element={<Profile />} />
+          <Route path="/account/personal" exact element={<PersonalInfo />} />
+          <Route path="/account/security" exact element={<Security />} />
+          <Route path="/account/payments" exact element={<Payments />} />
 
-        {/* Payouts */}
-        <Route path="/setup-payouts" exact element={<Payouts />} />
-        <Route path="/setup-payouts/interac" exact element={<Interac />} />
-        <Route path="/setup-payouts/paypal" exact element={<Paypal />} />
+          <Route path="/service-history" exact element={<History />} />
 
-        {/* Messages */}
-        <Route path="/messages" exact element={<Messages />} />
+          {/* Payouts */}
+          <Route path="/setup-payouts" exact element={<Payouts />} />
+          <Route path="/setup-payouts/interac" exact element={<Interac />} />
+          <Route path="/setup-payouts/paypal" exact element={<Paypal />} />
 
-        {/* Help */}
-        <Route path="/m/help" exact element={<MobileHelp />} />
-        <Route path="/m/account" exact element={<MobileAccount />} />
+          {/* Messages */}
+          <Route path="/messages" exact element={<Messages />} />
 
-        {/* MOBILE SPECIFIC ROUTES */}
-        <Route path="/notifications" exact element={<MobileNotifications />} />
+          {/* Help */}
+          <Route path="/m/help" exact element={<MobileHelp />} />
+          <Route path="/m/account" exact element={<MobileAccount />} />
 
-        {/* PAGE NOT FOUND */}
-        <Route path="*" exact element={<Notfound />} />
-      </Routes>
+          {/* MOBILE SPECIFIC ROUTES */}
+          <Route
+            path="/notifications"
+            exact
+            element={<MobileNotifications />}
+          />
+
+          {/* PAGE NOT FOUND */}
+          <Route path="*" exact element={<Notfound />} />
+        </Routes>
+         </AuthContextProvider>
+      </CookiesProvider>
     </BrowserRouter>
   );
 }

@@ -37,8 +37,6 @@ function App() {
     <BrowserRouter>
       <CookiesProvider>
           <AuthContextProvider>
-
-         
         <Routes>
           {/*General Routes */}
           <Route path="/" exact element={<Home />} />
@@ -55,7 +53,6 @@ function App() {
           <Route path="/account/personal" exact element={<PersonalInfo />} />
           <Route path="/account/security" exact element={<Security />} />
           <Route path="/account/payments" exact element={<Payments />} />
-
           <Route path="/service-history" exact element={<History />} />
 
           {/* Payouts */}

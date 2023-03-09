@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import logo from "../../assets/logo/logo.svg";
 import Search from "../Search/Search";
@@ -12,9 +12,12 @@ import Bell from "../../assets/icons/svg/Bell";
 
 import Notifications from "../../app/Notifications/Notifications";
 import Avatar from "../Avatar/Avatar";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Header() {
   const [showNoti, setShowNoti] = useState(false);
+
+  const { logOut } = useContext(AuthContext);
 
   // menu links
   const links = [
@@ -37,9 +40,9 @@ function Header() {
 
         {/* Profile  */}
         <div className="hidden md:flex items-center gap-2">
-          <a href="https://service-handys.netlify.app/">
-            <p>Switch to service provider</p>
-          </a>
+         <a href={`${process.env.REACT_APP_PROVIDER}`}>
+                  Switch to service provider
+                </a>
 
           {/* NOTIFICATIONS MODAL */}
           <div className="relative inline-block text-left z-50">
@@ -98,6 +101,11 @@ function Header() {
                         {({ active }) => (
                           <a href={link.href}>
                             <button
+                              onClick={() => {
+                                if (link.label === "Logout") {
+                                  logOut();
+                                }
+                              }}
                               className={`${
                                 active
                                   ? "text-black bg-lightSecondary"

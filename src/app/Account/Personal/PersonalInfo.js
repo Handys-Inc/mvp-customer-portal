@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Border from "../../../components/Border/Border";
 import AccountHeader from "../components/AccountHeader";
@@ -6,8 +6,12 @@ import AccountHeader from "../components/AccountHeader";
 import Layout from "../../../components/Layout/Layout";
 import EmailUpdate from "./components/EmailUpdate";
 import PhoneUpdate from "./components/PhoneUpdate";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 function PersonalInfo() {
+  const { currentUser } = useContext(AuthContext);
+  const { firstName, lastName } = currentUser;
+
   return (
     <Layout showBottomNav={false}>
       <AccountHeader title="Personal Info" />
@@ -19,7 +23,7 @@ function PersonalInfo() {
               <div>
                 <h3 className="text-base md:text-xl font-bold">Legal Name</h3>
                 <p className="text-sm md:text-lg text-gray font-light">
-                  Alice Iris
+                  {firstName} {lastName}
                 </p>
               </div>
               {/* <p className="underline hover:text-primary cursor-pointer">
@@ -33,10 +37,10 @@ function PersonalInfo() {
         {/* Gender */}
 
         {/* Email */}
-        <EmailUpdate />
+        <EmailUpdate currentUser={currentUser} />
 
         {/* Phone Number */}
-        <PhoneUpdate />
+        <PhoneUpdate currentUser={currentUser} />
       </div>
     </Layout>
   );

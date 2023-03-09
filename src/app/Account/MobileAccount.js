@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Layout from "../../components/Layout/Layout";
 
@@ -16,11 +16,18 @@ import shield from "../../assets/icons/shield-2.svg";
 import money from "../../assets/icons/money-bill.svg";
 import pro from "../../assets/images/pro.png";
 
+// authcontext
+import { AuthContext } from "../../contexts/AuthContext";
+
 function MobileAccount() {
-    // scroll to top
+  // scroll to top
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const { currentUser } = useContext(AuthContext);
+  const { firstName, lastName } = currentUser;
+
   return (
     <Layout current="account">
       <div className="flex flex-col justify-between h-[70vh]  w-full items-end md:hidden">
@@ -42,7 +49,9 @@ function MobileAccount() {
               <div className="flex gap-3 items-center ">
                 <img className="mb-0 md:mb-4 w-10" src={pro} alt="profile" />
                 <div>
-                  <p className="font-semibold"> Alice Iris</p>
+                  <p className="font-semibold">
+                    {firstName} {lastName}
+                  </p>
                   <p className="font-light text-gray text-xs">Show Profile</p>
                 </div>
               </div>

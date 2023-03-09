@@ -3,9 +3,36 @@ import React, { useState } from "react";
 import Border from "../../../../components/Border/Border";
 import Modal from "../../../../components/Modal/Modal";
 
-function EmailUpdate() {
+import services from "../../../../services";
+
+import Loader from "../../../../utils/Loader";
+import Notify from "../../../../components/Notify/Notify";
+
+function EmailUpdate({ currentUser, userUpdate }) {
+  const { email } = currentUser;
+
   const [showModal, setShowModal] = useState(false);
-  const [email, setEmail] = useState("aliceirs@handys.ca");
+  const [loading, setLoading] = useState(false);
+
+  const [newEmail, setNewEmail] = useState(email);
+
+  const update = () => {
+    setLoading(true);
+    services
+      .updateEmail(newEmail)
+      .then((res) => {
+       userUpdate()
+        console.log("res", res);
+        setLoading(false);
+        setShowModal(false);
+        Notify("success", "Updated email successfully");
+      })
+      .catch((e) => {
+        setLoading(false);
+        Notify("error", "An error occured");
+        console.log("error", e);
+      });
+  };
 
   return (
     <div className="my-5">
@@ -13,9 +40,7 @@ function EmailUpdate() {
         <div className="flex justify-between">
           <div>
             <h3 className="text-base md:text-xl font-bold">Email Address</h3>
-            <p className="text-sm md:text-lg text-gray font-light">
-              aliceiris@handys.ca
-            </p>
+            <p className="text-sm md:text-lg text-gray font-light">{email}</p>
           </div>
           <p
             onClick={() => setShowModal(true)}
@@ -35,12 +60,17 @@ function EmailUpdate() {
           <form>
             <input
               className="form-input mt-5"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={newEmail}
+              onChange={(e) => setNewEmail(e.target.value)}
             />
           </form>
-          <button className="btn-primary w-full my-5">Save</button>
+          <button
+            onClick={() => update()}
+            disabled={loading}
+            className="btn-primary w-full my-5"
+          >
+            {loading ? <Loader /> : "Save"}
+          </button>
         </div>
       </Modal>
     </div>

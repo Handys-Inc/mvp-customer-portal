@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // layout
 import Layout from "../../components/Layout/Layout";
@@ -15,8 +15,13 @@ import { RiAccountBoxLine } from "react-icons/ri";
 
 import { IoIosArrowForward } from "react-icons/io";
 import { FiHelpCircle } from "react-icons/fi";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Account() {
+  const { currentUser } = useContext(AuthContext);
+
+  const { firstName, lastName, email } = currentUser;
+
   return (
     <Layout>
       {/* Desktop view */}
@@ -25,10 +30,8 @@ function Account() {
           <h2 className="font-bold text-2xl md:text-4xl"> Account</h2>
           <div className="flex gap-3  items-center mt-2">
             <p className="text-base md:text-xl">
-              Alice Irs,{" "}
-              <span className="font-light text-gray text-lg">
-                aliceirs@handys.ca
-              </span>
+              {firstName} {lastName},{" "}
+              <span className="font-light text-gray text-lg">{email}</span>
             </p>
             <img className="mt-1" src={dot} alt="dot" />{" "}
             <NavLink to="/account/profile">

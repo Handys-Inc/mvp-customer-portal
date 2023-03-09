@@ -6,8 +6,9 @@ import Modal from "../../../../components/Modal/Modal";
 import services from "../../../../services";
 
 import Loader from "../../../../utils/Loader";
+import Notify from "../../../../components/Notify/Notify";
 
-function EmailUpdate({ currentUser }) {
+function EmailUpdate({ currentUser, userUpdate }) {
   const { email } = currentUser;
 
   const [showModal, setShowModal] = useState(false);
@@ -20,11 +21,15 @@ function EmailUpdate({ currentUser }) {
     services
       .updateEmail(newEmail)
       .then((res) => {
+       userUpdate()
         console.log("res", res);
         setLoading(false);
+        setShowModal(false);
+        Notify("success", "Updated email successfully");
       })
       .catch((e) => {
         setLoading(false);
+        Notify("error", "An error occured");
         console.log("error", e);
       });
   };

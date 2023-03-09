@@ -9,7 +9,7 @@ import PhoneUpdate from "./components/PhoneUpdate";
 import { AuthContext } from "../../../contexts/AuthContext";
 
 function PersonalInfo() {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, userUpdate } = useContext(AuthContext);
   const { firstName, lastName } = currentUser;
 
   return (
@@ -37,10 +37,10 @@ function PersonalInfo() {
         {/* Gender */}
 
         {/* Email */}
-        <EmailUpdate currentUser={currentUser} />
+        <EmailUpdate userUpdate={userUpdate} currentUser={currentUser} />
 
         {/* Phone Number */}
-        <PhoneUpdate currentUser={currentUser} />
+        <PhoneUpdate userUpdate={userUpdate} currentUser={currentUser} />
       </div>
     </Layout>
   );

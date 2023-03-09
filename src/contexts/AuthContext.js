@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, createContext } from "react";
 
 import { useCookies } from "react-cookie";
+import services from "../services";
 
 export const AuthContext = createContext();
 
@@ -17,6 +18,8 @@ const AuthContextProvider = (props) => {
   // cookies
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
+  // get new details everytime an update is made
+
   // useeffect to update current user
   useEffect(() => {
     if (cookies.user === undefined && dataFromLS === null) {
@@ -27,6 +30,17 @@ const AuthContextProvider = (props) => {
       localStorage.setItem("user", JSON.stringify(cookies.user));
     }
   }, []);
+
+  const userUpdate = () => {
+    services
+      .getSingleUser()
+      .then((res) => {
+        console.log("user creds", res);
+      })
+      .catch((e) => {
+        console.log("error", e);
+      });
+  };
 
   // deleting/destroying user details upon logout
   const logOut = () => {
@@ -39,6 +53,7 @@ const AuthContextProvider = (props) => {
   return (
     <AuthContext.Provider
       value={{
+        userUpdate,
         currentUser,
         logOut,
       }}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 // router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -38,7 +38,29 @@ import ProviderProfile from "./app/Provider/Profile/ProviderProfile";
 import { CookiesProvider } from "react-cookie";
 import AuthContextProvider from "./contexts/AuthContext";
 
+// protected route
+import {ProtectedRoutes} from './routes/ProtectedRoutes'
+
 function App() {
+    const authenticate = () => {
+    return new Promise((resolve) => setTimeout(resolve, 1000)); // 2 seconds
+  };
+
+  useEffect(() => {
+    authenticate().then(() => {
+      const ele = document.getElementById("ipl-progress-indicator");
+      if (ele) {
+        // fade out
+        ele.classList.add("available");
+        setTimeout(() => {
+          // remove from DOM
+          ele.outerHTML = "";
+        }, 2000);
+      }
+    });
+  }, []);
+
+
   return (
     <BrowserRouter>
       <ToastContainer
@@ -54,7 +76,10 @@ function App() {
       />
       <CookiesProvider>
         <AuthContextProvider>
+      
+       
           <Routes>
+               <Route element={<ProtectedRoutes/>} >
             {/*General Routes */}
             <Route path="/" exact element={<Home />} />
             <Route path="/book/provider" exact element={<Provider />} />
@@ -97,7 +122,9 @@ function App() {
 
             {/* PAGE NOT FOUND */}
             <Route path="*" exact element={<Notfound />} />
+          </Route>
           </Routes>
+       
         </AuthContextProvider>
       </CookiesProvider>
     </BrowserRouter>

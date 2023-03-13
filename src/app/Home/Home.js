@@ -11,21 +11,14 @@ import Modal from "../../components/Modal/Modal";
 import MobileSearch from "../MobileSearch/MobileSearch";
 import Border from "../../components/Border/Border";
 
-
-
-
 // css
 import "./index.css";
-
-
 
 function Home() {
   // scroll to top
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-
 
   const [showMobileSearch, setShowMobileSearch] = useState(false);
 

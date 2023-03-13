@@ -38,6 +38,9 @@ import ProviderProfile from "./app/Provider/Profile/ProviderProfile";
 import { CookiesProvider } from "react-cookie";
 import AuthContextProvider from "./contexts/AuthContext";
 
+// protected route
+import {ProtectedRoutes} from './routes/ProtectedRoutes'
+
 function App() {
   return (
     <BrowserRouter>
@@ -54,7 +57,10 @@ function App() {
       />
       <CookiesProvider>
         <AuthContextProvider>
+      
+       
           <Routes>
+               <Route element={<ProtectedRoutes/>} >
             {/*General Routes */}
             <Route path="/" exact element={<Home />} />
             <Route path="/book/provider" exact element={<Provider />} />
@@ -97,7 +103,9 @@ function App() {
 
             {/* PAGE NOT FOUND */}
             <Route path="*" exact element={<Notfound />} />
+          </Route>
           </Routes>
+       
         </AuthContextProvider>
       </CookiesProvider>
     </BrowserRouter>

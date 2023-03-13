@@ -7,8 +7,9 @@ import { AuthContext } from "../contexts/AuthContext";
 // state from redux
 
 export const ProtectedRoutes = () => {
- const { currentUser } = useContext(AuthContext);
+//  const { currentUser } = useContext(AuthContext);
 
+ let currentUser = true;
   return Boolean(currentUser) ? (
     <Outlet />
   ) : (

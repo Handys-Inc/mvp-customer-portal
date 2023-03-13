@@ -43,7 +43,7 @@ import {ProtectedRoutes} from './routes/ProtectedRoutes'
 
 function App() {
     const authenticate = () => {
-    return new Promise((resolve) => setTimeout(resolve, 1000)); // 2 seconds
+    return new Promise((resolve) => setTimeout(resolve, 500)); // 2 seconds
   };
 
   useEffect(() => {
@@ -55,7 +55,7 @@ function App() {
         setTimeout(() => {
           // remove from DOM
           ele.outerHTML = "";
-        }, 2000);
+        }, 500);
       }
     });
   }, []);

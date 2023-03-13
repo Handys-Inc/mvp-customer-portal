@@ -18,7 +18,7 @@ import { FiHelpCircle } from "react-icons/fi";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Account() {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, logOut } = useContext(AuthContext);
 
   const { firstName, lastName, email } = currentUser;
 
@@ -109,7 +109,7 @@ function Account() {
           </NavLink>
 
           {/* help */}
-          <NavLink to="/m/help">
+     <a href={`${process.env.REACT_APP_MAIN}/help`}>
             <div className="flex justify-between py-4 text-lg items-center text-gray">
               <div className="flex gap-3 items-center ">
                 <FiHelpCircle size={24} />
@@ -119,15 +119,15 @@ function Account() {
                 <IoIosArrowForward />
               </div>
             </div>
-          </NavLink>
+       </a>
 
-          <a href="https://service-handys.netlify.app/">
+          <a href={`${process.env.REACT_APP_PROVIDER}`}>
             <button className="btn-primary-outline w-full mb-3">
               Switch to provide service
             </button>
           </a>
 
-          <button className="btn-primary w-full mb-2">Log Out</button>
+          <button onClick={() => logOut()} className="btn-primary w-full mb-2">Log Out</button>
         </div>
       </div>
     </Layout>

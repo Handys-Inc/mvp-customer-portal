@@ -9,7 +9,7 @@ import Loader from "../../../../utils/Loader";
 import Notify from "../../../../components/Notify/Notify";
 
 function EmailUpdate({ currentUser, userUpdate }) {
-  const { email } = currentUser;
+  const { email} = currentUser;
 
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -21,16 +21,14 @@ function EmailUpdate({ currentUser, userUpdate }) {
     services
       .updateEmail(newEmail)
       .then((res) => {
-       userUpdate()
-        console.log("res", res);
+        userUpdate();
         setLoading(false);
         setShowModal(false);
-        Notify("success", "Updated email successfully");
+        Notify("success", res.data.message);
       })
       .catch((e) => {
         setLoading(false);
-        Notify("error", "An error occured");
-        console.log("error", e);
+        Notify("error", e.response.data);
       });
   };
 

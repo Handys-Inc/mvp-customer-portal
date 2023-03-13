@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 
 import Header from "../../../components/Header/Header";
 
-import pro from "../../../assets/images/profile.png";
+import Avatar from '../../../components/Avatar/Avatar'
+
+import {AuthContext} from '../../../contexts/AuthContext'
+
 import { NavLink } from "react-router-dom";
 
 import { FiCheck } from "react-icons/fi";
@@ -12,7 +15,13 @@ import Border from "../../../components/Border/Border";
 import Like from "../../../assets/icons/svg/Like";
 
 function Profile() {
+  
+const {currentUser} = useContext(AuthContext)
+
+const {firstName, lastName, createdAt} = currentUser;
+
   return (
+
     <div>
       <Header />
       <div className="mt-20 mb-5 max-w-5xl mx-auto">
@@ -23,7 +32,7 @@ function Profile() {
       <div className="flex gap-10 max-w-5xl mx-auto mb-32">
         {/* Account Card */}
         <div className="account-card w-80">
-          <img className="w-24 mx-auto" src={pro} alt="profile" />
+          <Avatar/>
           <p className="mt-2 underline underline-offset-4 text-center">
             Change photo
           </p>
@@ -32,7 +41,7 @@ function Profile() {
             <span>+15 (20 Reviews)</span>
           </div>
           <Border />
-          <h2 className="text-gray text-lg">Alice Confirmed</h2>
+          <h2 className="text-gray text-lg">{firstName} Confirmed</h2>
           <div>
             <p className="text-gray mt-2">
               <FiCheck className="inline-block" /> Phone Number
@@ -49,8 +58,8 @@ function Profile() {
 
         {/* Account Info & Reviews */}
         <div className="flex-1">
-          <h2 className="font-bold text-4xl">Alice Iris</h2>
-          <p className="my-2 font-light text-gray text-sm">Joined in 2019</p>
+          <h2 className="font-bold text-4xl">{firstName} {lastName}</h2>
+          <p className="my-2 font-light text-gray text-sm">Joined in {createdAt}</p>
           <p className="underline ">Edit Profile</p>
 
           <Border />

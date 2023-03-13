@@ -1,17 +1,18 @@
 import axios from "axios";
 
-// Current user from Local Storage
-const currentUser = JSON.parse(localStorage.getItem("user") || null);
+// local service
+import { getToken, getId } from "../local/localService";
 
-// API
+// USER API
 const baseURL = `${process.env.REACT_APP_BASE_URL}/api/users`;
 
 const headers = {
-  // "x-auth-token": currentUser.token,
+  "x-auth-token": getToken(),
   "Content-Type": "application/json",
 };
 
-console.log("current user", currentUser);
+
+// ENDPOINTS
 
 export const updateEmail = (email) => {
   const data = JSON.stringify({
@@ -19,19 +20,29 @@ export const updateEmail = (email) => {
   });
   return axios({
     method: "POST",
-    url: `${baseURL}/update-email/`,
-    //  url: `${baseURL}/update-email/${_id}`,
+    url: `${baseURL}/update-email/${getId()}`,
     data: data,
     headers: headers,
   });
 };
 
-export const getSingleUser = (email) => {
+export const updatePhone = (phoneNumber) => {
+  const data = JSON.stringify({
+  phoneNumber,
+});
   return axios({
     method: "POST",
-    url: `${baseURL}/users/user`,
-    // url: `${baseURL}/users/user/${currentUser._id}`,
+    url: `${baseURL}/update-number/${getId()}`,
+    data: data,
+    headers: headers,
+  });
+};
 
+export const getSingleUser = () => {
+  console.log("using id to update", getId())
+  return axios({
+    method: "GET",
+    url: `${baseURL}/user/${getId()}`,
     headers: headers,
   });
 };

@@ -3,8 +3,28 @@ import React, { useState } from "react";
 import Border from "../../../../components/Border/Border";
 import Modal from "../../../../components/Modal/Modal";
 
-function PhoneUpdate() {
+function PhoneUpdate({currentUser}) {
   const [showModal, setShowModal] = useState(false);
+
+  // const {p}
+
+  //  const [newEmail, setNewEmail] = useState(email);
+
+  // const update = () => {
+  //   setLoading(true);
+  //   services
+  //     .updateEmail(newEmail)
+  //     .then((res) => {
+  //       userUpdate();
+  //       setLoading(false);
+  //       setShowModal(false);
+  //       Notify("success", res.data.message);
+  //     })
+  //     .catch((e) => {
+  //       setLoading(false);
+  //       Notify("error", e.response.data);
+  //     });
+  // };
 
   return (
     <div className="my-5">

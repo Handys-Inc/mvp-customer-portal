@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 // router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -42,6 +42,25 @@ import AuthContextProvider from "./contexts/AuthContext";
 import {ProtectedRoutes} from './routes/ProtectedRoutes'
 
 function App() {
+    const authenticate = () => {
+    return new Promise((resolve) => setTimeout(resolve, 1000)); // 2 seconds
+  };
+
+  useEffect(() => {
+    authenticate().then(() => {
+      const ele = document.getElementById("ipl-progress-indicator");
+      if (ele) {
+        // fade out
+        ele.classList.add("available");
+        setTimeout(() => {
+          // remove from DOM
+          ele.outerHTML = "";
+        }, 2000);
+      }
+    });
+  }, []);
+
+
   return (
     <BrowserRouter>
       <ToastContainer

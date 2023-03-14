@@ -48,10 +48,23 @@ export const getSingleUser = () => {
 };
 
 export const deactivateAccount = () => {
-
   return axios({
     method: "POST",
     url: `${baseURL}/deactivate/${getId()}`,
+    headers: headers,
+  });
+};
+
+
+export const updatePassword = (currentPassword, newPassword) => {
+    const data = JSON.stringify({
+  currentPassword,
+  newPassword,
+});
+  return axios({
+    method: "POST",
+    url: `${baseURL}/reset-password/${getId()}`,
+    data: data,
     headers: headers,
   });
 };

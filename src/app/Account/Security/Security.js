@@ -30,7 +30,7 @@ function Security() {
             onClick={() => setPasswordModal(true)}
             className="text-sm md:text-base cursor-pointer text-red-600"
           >
-            Update
+            Update Password
           </p>
         </div>
 

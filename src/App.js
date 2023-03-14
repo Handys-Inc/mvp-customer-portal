@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 
 // router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -39,11 +39,11 @@ import { CookiesProvider } from "react-cookie";
 import AuthContextProvider from "./contexts/AuthContext";
 
 // protected route
-import {ProtectedRoutes} from './routes/ProtectedRoutes'
+import { ProtectedRoutes } from "./routes/ProtectedRoutes";
 
 function App() {
-    const authenticate = () => {
-    return new Promise((resolve) => setTimeout(resolve, 500)); // 2 seconds
+  const authenticate = () => {
+    return new Promise((resolve) => setTimeout(resolve, 300)); // 2 seconds
   };
 
   useEffect(() => {
@@ -55,11 +55,11 @@ function App() {
         setTimeout(() => {
           // remove from DOM
           ele.outerHTML = "";
-        }, 500);
+          // ele.classList.remove("available");
+        }, 300);
       }
     });
   }, []);
-
 
   return (
     <BrowserRouter>
@@ -76,55 +76,60 @@ function App() {
       />
       <CookiesProvider>
         <AuthContextProvider>
-      
-       
           <Routes>
-               <Route element={<ProtectedRoutes/>} >
-            {/*General Routes */}
-            <Route path="/" exact element={<Home />} />
-            <Route path="/book/provider" exact element={<Provider />} />
+            <Route element={<ProtectedRoutes />}>
+              {/*General Routes */}
+              <Route path="/" exact element={<Home />} />
+              <Route path="/book/provider" exact element={<Provider />} />
 
-            <Route
-              path="/provider/profile"
-              exact
-              element={<ProviderProfile />}
-            />
+              <Route
+                path="/provider/profile"
+                exact
+                element={<ProviderProfile />}
+              />
 
-            {/* Checkout */}
-            <Route path="/checkout" exact element={<Checkout />} />
+              {/* Checkout */}
+              <Route path="/checkout" exact element={<Checkout />} />
 
-            {/* Account */}
-            <Route path="/account" exact element={<Account />} />
-            <Route path="/account/profile" exact element={<Profile />} />
-            <Route path="/account/personal" exact element={<PersonalInfo />} />
-            <Route path="/account/security" exact element={<Security />} />
-            <Route path="/account/payments" exact element={<Payments />} />
-            <Route path="/service-history" exact element={<History />} />
+              {/* Account */}
+              <Route path="/account" exact element={<Account />} />
+              <Route path="/account/profile" exact element={<Profile />} />
+              <Route
+                path="/account/personal"
+                exact
+                element={<PersonalInfo />}
+              />
+              <Route path="/account/security" exact element={<Security />} />
+              <Route path="/account/payments" exact element={<Payments />} />
+              <Route path="/service-history" exact element={<History />} />
 
-            {/* Payouts */}
-            <Route path="/setup-payouts" exact element={<Payouts />} />
-            <Route path="/setup-payouts/interac" exact element={<Interac />} />
-            <Route path="/setup-payouts/paypal" exact element={<Paypal />} />
+              {/* Payouts */}
+              <Route path="/setup-payouts" exact element={<Payouts />} />
+              <Route
+                path="/setup-payouts/interac"
+                exact
+                element={<Interac />}
+              />
+              <Route path="/setup-payouts/paypal" exact element={<Paypal />} />
 
-            {/* Messages */}
-            <Route path="/messages" exact element={<Messages />} />
+              {/* Messages */}
+              <Route path="/messages" exact element={<Messages />} />
 
-            {/* Help */}
-            <Route path="/m/help" exact element={<MobileHelp />} />
-            <Route path="/m/account" exact element={<MobileAccount />} />
+              {/* Help */}
+              <Route path="/m/help" exact element={<MobileHelp />} />
+              <Route path="/m/account" exact element={<MobileAccount />} />
 
-            {/* MOBILE SPECIFIC ROUTES */}
-            <Route
-              path="/notifications"
-              exact
-              element={<MobileNotifications />}
-            />
+              {/* MOBILE SPECIFIC ROUTES */}
+              <Route
+                path="/notifications"
+                exact
+                element={<MobileNotifications />}
+              />
 
-            {/* PAGE NOT FOUND */}
-            <Route path="*" exact element={<Notfound />} />
-          </Route>
+              {/* PAGE NOT FOUND */}
+              <Route path="*" exact element={<Notfound />} />
+            </Route>
           </Routes>
-       
         </AuthContextProvider>
       </CookiesProvider>
     </BrowserRouter>

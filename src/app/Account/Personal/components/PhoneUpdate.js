@@ -3,28 +3,32 @@ import React, { useState } from "react";
 import Border from "../../../../components/Border/Border";
 import Modal from "../../../../components/Modal/Modal";
 
-function PhoneUpdate({currentUser}) {
+import services from "../../../../services";
+
+import Loader from "../../../../utils/Loader";
+import Notify from "../../../../components/Notify/Notify";
+function PhoneUpdate({currentUser, userUpdate}) {
   const [showModal, setShowModal] = useState(false);
 
-  // const {p}
+ const [loading, setLoading]= useState(false)
 
-  //  const [newEmail, setNewEmail] = useState(email);
+const [phoneNumber, setPhoneNumber] = useState("")
 
-  // const update = () => {
-  //   setLoading(true);
-  //   services
-  //     .updateEmail(newEmail)
-  //     .then((res) => {
-  //       userUpdate();
-  //       setLoading(false);
-  //       setShowModal(false);
-  //       Notify("success", res.data.message);
-  //     })
-  //     .catch((e) => {
-  //       setLoading(false);
-  //       Notify("error", e.response.data);
-  //     });
-  // };
+  const update = () => {
+    setLoading(true);
+    services
+      .updateEmail(phoneNumber)
+      .then((res) => {
+        userUpdate();
+        setLoading(false);
+        setShowModal(false);
+        Notify("success", res.data.message);
+      })
+      .catch((e) => {
+        setLoading(false);
+        Notify("error", e.response.data);
+      });
+  };
 
   return (
     <div className="my-5">
@@ -33,7 +37,7 @@ function PhoneUpdate({currentUser}) {
           <div>
             <h3 className="text-base md:text-xl font-bold">Phone Number</h3>
             <p className="text-sm md:text-lg text-gray font-light">
-              +1 *** - ***- 4555
+             {phoneNumber}
             </p>
           </div>
           <p
@@ -61,7 +65,7 @@ function PhoneUpdate({currentUser}) {
               placeholder="  +1 *** - ***- 4555"
             />
           </form>
-          <button className="btn-primary w-full my-5">Verify</button>
+          <button className="btn-primary w-full my-5">{loading? <Loader/> : "Verify"}</button>
         </div>
       </Modal>
     </div>

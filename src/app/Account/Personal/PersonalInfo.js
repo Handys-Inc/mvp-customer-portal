@@ -7,10 +7,13 @@ import Layout from "../../../components/Layout/Layout";
 import EmailUpdate from "./components/EmailUpdate";
 import PhoneUpdate from "./components/PhoneUpdate";
 import { AuthContext } from "../../../contexts/AuthContext";
+import services from "../../../services";
 
 function PersonalInfo() {
   const { currentUser, userUpdate } = useContext(AuthContext);
   const { firstName, lastName } = currentUser;
+
+
 
   return (
     <Layout showBottomNav={false}>
@@ -34,7 +37,9 @@ function PersonalInfo() {
           </div>
         </div>
 
-        {/* Gender */}
+ 
+
+ 
 
         {/* Email */}
         <EmailUpdate userUpdate={userUpdate} currentUser={currentUser} />

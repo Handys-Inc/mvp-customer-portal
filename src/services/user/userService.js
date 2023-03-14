@@ -39,10 +39,19 @@ export const updatePhone = (phoneNumber) => {
 };
 
 export const getSingleUser = () => {
-  console.log("using id to update", getId())
+  console.log("using id to get user", getId())
   return axios({
     method: "GET",
     url: `${baseURL}/user/${getId()}`,
+    headers: headers,
+  });
+};
+
+export const deactivateAccount = () => {
+
+  return axios({
+    method: "POST",
+    url: `${baseURL}/deactivate/${getId()}`,
     headers: headers,
   });
 };

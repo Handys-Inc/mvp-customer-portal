@@ -22,21 +22,24 @@ const AuthContextProvider = (props) => {
   // get new details everytime an update is made
 
   // useeffect to update current user
+  // useeffect to update current user
   useEffect(() => {
-    if (cookies.user === undefined && dataFromLS === null) {
+    if (cookies.user === 'undefined' && dataFromLS === null) {
       setCurrentUser(null);
       window.open(`${process.env.REACT_APP_MAIN}/login/client`, "_self");
     }
-    if (cookies.user && dataFromLS === null) {
+    if (cookies.user !== 'undefined' && dataFromLS === null) {
       localStorage.setItem("user", JSON.stringify(cookies.user));
     }
   }, []);
+
+
+
 
   const userUpdate = () => {
     services
       .getSingleUser()
       .then((res) => {
-
         setCurrentUser({
           ...res.data,
           token: currentUser.token,
@@ -51,13 +54,13 @@ const AuthContextProvider = (props) => {
   
       })
       .catch((e) => {
-        console.log("error getting user", e);
+        console.log("error getting user to update", e);
       });
   };
 
 
   // deleting/destroying user details upon logout
-  const logOut = () => {
+   const logOut = () => {
     removeCookie("user");
     localStorage.clear();
     window.location.reload();
